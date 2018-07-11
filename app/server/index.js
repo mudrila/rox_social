@@ -1,6 +1,7 @@
 const config = require('../../config/index');
 const dbConfig = require('../../config/database');
 const express = require('express');
+const path = require('path');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -20,8 +21,11 @@ app.use(cors());
 app.use(bodyParser.json({ limit: '20mb' }));
 app.use(bodyParser.urlencoded({ limit: '20mb', extended: false}));
 
-// Serve static files
-app.use(express.static(__dirname + './../public/'));
+app.use(express.static(path.join(__dirname, '../../dist')));
+// app.get('/', function (request, response) {
+//   const dist = path.join(__dirname, '../../dist/index.html');
+//   response.sendFile(dist)
+// });
 
 // End-points
 app.use('/api/user', userRouter);

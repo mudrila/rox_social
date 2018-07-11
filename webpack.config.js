@@ -2,6 +2,7 @@
 
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanPlugin = require('./plugins/clean-plugin');
 
 const config = {
@@ -18,6 +19,10 @@ const config = {
   plugins: [
     new CleanPlugin({
       files: ['dist/static/*']
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, './app/public/index.html'),
+      inject: 'body'
     }),
     new ExtractTextPlugin('css/bundle.css', { allChunks: true })
   ],
