@@ -145,10 +145,11 @@ function uploadAvatar(request, response) {
         messageBody:'Such user does not exist!'
       })
     } else {
-      const tempPath = path.join(__dirname, `../../${request.file.path}`);
-      const targetPath = path.join(__dirname, `../../static/avatars/${user.name}-${user.uuid}${path.extname(request.file.originalname).toLowerCase()}`);
+      const tempPath = request.file.path;
+      const targetPath = path.join(__dirname, `../../../uploads/avatars/${user.name}-${user.uuid}${path.extname(request.file.originalname).toLowerCase()}`);
       fs.rename(tempPath, targetPath, err => {
         if (err) {
+          console.log(err);
           response.status(500).json({
             success:false,
             messageType:'error',
@@ -193,15 +194,15 @@ function getAvatar(request, response) {
         messageBody: 'Unknown error while getting user avatar'
       })
     } else if (!user){
-      response.sendFile(path.join(__dirname, '../../static/avatars/anonymous.png'))
+      response.sendFile(path.join(__dirname, '../../assets/anonymous.png'))
     } else {
       if (!user.avatarSrc) {
-        response.sendFile(path.join(__dirname, '../../static/avatars/anonymous.png'))
+        response.sendFile(path.join(__dirname, '../../assets/anonymous.png'))
       } else {
           if (fs.existsSync(user.avatarSrc)) {
             response.sendFile(user.avatarSrc)
           } else {
-            response.sendFile(path.join(__dirname, '../../static/avatars/anonymous.png'))
+            response.sendFile(path.join(__dirname, '../../assets/anonymous.png'))
           }
       }
     }

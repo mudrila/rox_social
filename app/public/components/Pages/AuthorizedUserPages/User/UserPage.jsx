@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import APIUrl from '../../../Root/redux/middlewares/APIServiceBases'
+import { APIUrl } from '../../../Root/redux/middlewares/APIServiceBases'
 import Button from '@material-ui/core/Button'
 import './main.scss'
 

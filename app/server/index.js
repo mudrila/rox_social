@@ -21,12 +21,14 @@ app.use(cors());
 app.use(bodyParser.json({ limit: '20mb' }));
 app.use(bodyParser.urlencoded({ limit: '20mb', extended: false}));
 
+// End-points
+app.use('/api/user', userRouter);
+
+// Serve static
 app.use(express.static(path.join(__dirname, '../../dist')));
 app.get('*', function (request, response) {
   response.sendFile(path.resolve(__dirname, '../../dist', 'index.html'))
 });
-// End-points
-app.use('/api/user', userRouter);
 
 // Run server
 app.listen(config.port, error => {

@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 const config = require('../../../../config/index');
 
 function verifyToken(request, response, next) {
-  let token = request.headers['Authorization'];
+  let token = request.headers['authorization'];
   if (!token) {
     return response.status(403).json({ success:false, messageType:'warning', messageBody:'No access token provided'})
   }
