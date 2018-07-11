@@ -22,10 +22,6 @@ app.use(bodyParser.json({ limit: '20mb' }));
 app.use(bodyParser.urlencoded({ limit: '20mb', extended: false}));
 
 app.use(express.static(path.join(__dirname, '../../dist')));
-// app.get('/', function (request, response) {
-//   const dist = path.join(__dirname, '../../dist/index.html');
-//   response.sendFile(dist)
-// });
 
 // End-points
 app.use('/api/user', userRouter);
