@@ -1,0 +1,11 @@
+{
+  "env": {
+    "node": true
+  },
+  "extends": ["eslint:recommended", "standard"],
+  "rules": {
+    "comma-dangle": 0,
+    "no-unused-vars":"warn",
+    "no-unexpected-multiline":"warn"
+  }
+}
