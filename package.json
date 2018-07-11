@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/mudrila/rox_social#readme",
   "dependencies": {
+    "babel-preset-env": "^1.7.0",
     "bcrypt": "^3.0.0",
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
@@ -27,6 +28,7 @@
     "uuid": "^3.3.2"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "eslint": "^5.1.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.13.0",
