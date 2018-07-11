@@ -51,7 +51,7 @@ const config = {
           options: {
             name: '[path][name]-[hash].[ext]',
             limit: 30000,
-            outputPath: 'images/',
+            outputPath: 'images',
           }
         }]
       },

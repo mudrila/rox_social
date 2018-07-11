@@ -4,8 +4,9 @@
   "description": "Social network learning project",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app/server/index.js",
-    "webpack": "./node_modules/.bin/webpack -w",
+    "start": "node app/server/index.js",
+    "build:server": "babel app/server -d build",
+    "build:public": "./node_modules/.bin/webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -56,7 +57,6 @@
     "@babel/preset-es2015": "^7.0.0-beta.52",
     "@babel/preset-react": "^7.0.0-beta.52",
     "@babel/preset-stage-0": "^7.0.0-beta.52",
-    "autoprefixer": "^8.6.5",
     "babel-cli": "^6.26.0",
     "babel-loader": "^8.0.0-beta.4",
     "css-loader": "^1.0.0",
