@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import AuthorizedUserApp from './AuthorizedUserApp/App'
 import UnauthorizedUserApp from './UnauthorizedUserApp/App'
-import './main.scss'
+import './styles/main.scss'
+import './styles/adaptive.scss'
+
 export default class App extends Component {
   static propTypes = {
     user: PropTypes.shape({
@@ -12,7 +14,7 @@ export default class App extends Component {
       loginRequest: PropTypes.func,
       logoutRequest: PropTypes.func
     })
-  }
+  };
   render () {
     if (this.props.user.isAuthenticated === true) {
       return <AuthorizedUserApp userActions={this.props.userActions}/>
