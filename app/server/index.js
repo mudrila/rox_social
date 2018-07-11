@@ -8,9 +8,14 @@ const bodyParser = require('body-parser');
 const userRouter = require('./user/routes');
 
 const app = express();
-
+let mongoUrl;
+if (process.env.NODE_ENV === 'production') {
+  mongoUrl = 'mongodb://heroku_f8hbkxcw:t0gk652b0mmusqmnmlcpk3fn19@ds235181.mlab.com:35181/heroku_f8hbkxcw'
+} else {
+  mongoUrl = dbConfig.mongoUrl
+}
 // Configure Mongo
-mongoose.connect(dbConfig.mongoUrl, {useNewUrlParser: true}, error => {
+mongoose.connect(mongoUrl, {useNewUrlParser: true}, error => {
   if (error) {
     console.error('Some problems while connecting to Mongo:', error);
     throw error

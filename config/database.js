@@ -1,3 +1,4 @@
+const env = process.env;
 module.exports =  {
-  mongoUrl: 'mongodb://localhost:27017/freeSocial'
+  mongoUrl: env.MONGODB_URI || 'mongodb://localhost:27017/freeSocial'
 };
