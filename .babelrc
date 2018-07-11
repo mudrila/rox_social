@@ -1,8 +1,8 @@
 {
   "presets": [
-    "env",
+    "@babel/preset-env",
     "@babel/preset-es2015",
-    ["@babel/preset-stage-0", { "decoratorsLegacy": true }],
+    ["@babel/preset-stage-0", { "decoratorsLegacy": true, "pipelineProposal": "minimal" }],
     "@babel/preset-react"
   ]
 }

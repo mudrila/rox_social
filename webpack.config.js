@@ -1,9 +1,7 @@
 'use strict';
 
 const path = require('path');
-const webpack = require('webpack');
-const ExtractTextPlguin = require('extract-text-webpack-plugin');
-const autoprefixer = require('autoprefixer');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanPlugin = require('./plugins/clean-plugin');
 
 const BUILD_DIR = path.resolve(__dirname, './build');
@@ -21,7 +19,7 @@ const config = {
     new CleanPlugin({
       files: ['dist/static/*']
     }),
-    new ExtractTextPlguin('css/bundle.css', { allChunks: true })
+    new ExtractTextPlugin('css/bundle.css', { allChunks: true })
   ],
   module: {
     exprContextCritical: false,
@@ -37,7 +35,7 @@ const config = {
           fallback: 'style-loader',
           use: 'css-loader!resolve-url-loader!sass-loader?sourceMap&importLoaders=1'
         }),
-        include: path.join(__dirname, 'src')
+        include: path.join(__dirname, 'app/public/')
       },
       {
         test: /\.css$/,
