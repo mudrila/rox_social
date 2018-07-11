@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 const config = require('../../../config/index');
 const User = require('./model');
 
-export function signUp (request, response) {
+function signUp (request, response) {
   let requestData = request.body;
   if (requestData.email &&
     requestData.name  &&
@@ -49,7 +49,7 @@ export function signUp (request, response) {
     })
   }
 }
-export function login(request, response) {
+function login(request, response) {
   let requestData =  request.body;
   if (requestData.email && requestData.password) {
     User.findOne({ email: requestData.email }).exec(function (err, user) {
@@ -99,7 +99,7 @@ export function login(request, response) {
     })
   }
 }
-export function getDetails(request, response) {
+function getDetails(request, response) {
   let userID = request.params.userID;
   User.findOne( {uuid: userID} ).exec(function (err, user) {
     if (err) {
@@ -129,7 +129,7 @@ export function getDetails(request, response) {
     }
   })
 }
-export function uploadAvatar(request, response) {
+function uploadAvatar(request, response) {
   let userID = request.params.userID;
   User.findOne({ uuid: userID}).exec(function (err, user) {
     if (err) {
@@ -183,7 +183,7 @@ export function uploadAvatar(request, response) {
     }
   });
 }
-export function getAvatar(request, response) {
+function getAvatar(request, response) {
   let userID = request.params.userID;
   User.findOne({ uuid: userID}).exec(function (err, user) {
     if (err) {
@@ -207,3 +207,10 @@ export function getAvatar(request, response) {
     }
   });
 }
+module.exports = {
+  signUp: signUp,
+  login: login,
+  getDetails: getDetails,
+  uploadAvatar: uploadAvatar,
+  getAvatar: getAvatar
+};

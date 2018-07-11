@@ -1,7 +1,7 @@
-import { Router } from 'express'
-import  verifyToken  from '../middlewares/auth/verifyToken'
-import multer from 'multer'
-import * as UserController from './controller'
+const Router = require('express').Router;
+const verifyToken = require('../middlewares/auth/verifyToken');
+const multer = require('multer');
+const UserController = require('./controller');
 let userRouter = Router();
 const avatarUpload = multer({ dest: 'tmp/avatars/'});
 
