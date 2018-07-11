@@ -1,0 +1,11 @@
+@import "../../../assets/scss/variables/colors";
+.b-main-container {
+  background-color: $light-gray;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: $black;
+  padding: 5vh 5% 15vh 5%;
+}

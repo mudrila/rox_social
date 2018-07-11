@@ -1,0 +1,79 @@
+@import "../../../../assets/scss/variables/colors";
+.b-user-page {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  &__header {
+    width: 100%;
+    display: flex;
+  }
+  &__b-user-avatar {
+    width: 30%;
+    &__form {
+      &__b-form-group {
+        width: 100%;
+        border: none;
+        &__label {
+          display: flex;
+          width: 100%;
+          margin-top: 5px;
+          margin-bottom: 5px;
+        }
+        &__input {
+          display: flex;
+          width: 100%;
+          border-radius: 2.5px;
+          border: 1px solid $linkedin-blue;
+          margin-top: 5px;
+          margin-bottom: 5px;
+          padding: 10px;
+          &:disabled {
+            background-color: $light-gray;
+          }
+        }
+        &__button {
+          width: 100%;
+        }
+      }
+    }
+  }
+  &__b-user-data {
+    width: 100%;
+    &__form {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      &__b-form-group {
+        width: 100%;
+        border: none;
+        &__label {
+          display: flex;
+          width: 30%;
+          margin-top: 5px;
+          margin-bottom: 5px;
+        }
+        &__input {
+          display: flex;
+          width: 30%;
+          border-radius: 2.5px;
+          border: 1px solid $linkedin-blue;
+          margin-top: 5px;
+          margin-bottom: 5px;
+          padding: 10px;
+          &:disabled {
+            background-color: $light-gray;
+          }
+        }
+      }
+    }
+  }
+  .b-card {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+  }
+}

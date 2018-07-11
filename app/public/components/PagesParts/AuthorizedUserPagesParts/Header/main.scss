@@ -1,0 +1,55 @@
+@import "../../../../assets/scss/variables/colors";
+.b-main-header {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: white;
+  min-height: 5vh;
+  width: 100%;
+  position: fixed;
+  box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  &__meta-container {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    padding-left: 30px;
+    .logo {
+      margin-left: 5px;
+      margin-right: 5px;
+      color: $light-gray;
+    }
+    .slogan {
+      margin-left: 5px;
+      margin-right: 5px;
+      color: $light-gray;
+    }
+  }
+  &__main-menu {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    &__menu-items-container {
+      width: 100%;
+      display: flex;
+      padding-left: 0;
+      margin: 0;
+      justify-content: flex-end;
+      padding-right: 30px;
+      &__menu-item-container {
+        margin-left: 5px;
+        margin-right: 5px;
+        list-style: none;
+        &__menu-item {
+          text-decoration: none;
+          color: $light-gray;
+          &:visited {
+            color: $light-gray;
+          }
+          &:hover {
+            color: $red;
+          }
+        }
+      }
+    }
+  }
+}
