@@ -11,4 +11,4 @@ export const RootSaga = function * () {
     watchUserSaga(),
     watchRegistrationSaga()
   ])
-}
+};

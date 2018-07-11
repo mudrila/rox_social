@@ -4,6 +4,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const userRouter = require('./user/routes');
 
 const app = express();
 
@@ -21,6 +22,9 @@ app.use(bodyParser.urlencoded({ limit: '20mb', extended: false}));
 
 // Serve static files
 app.use(express.static(__dirname + './../public/'));
+
+// End-points
+app.use('/api/user', userRouter);
 
 // Run server
 app.listen(config.port, error => {

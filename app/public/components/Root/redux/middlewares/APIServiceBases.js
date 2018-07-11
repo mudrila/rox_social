@@ -1,5 +1,6 @@
 import axios from 'axios'
-import APIUrl from '../../../../../config/api'
+
+const APIUrl = '/api/';
 
 /**
  * @function basePostRequest - function, which will make POST request to endpoint with given data and return request data
@@ -8,8 +9,8 @@ import APIUrl from '../../../../../config/api'
  * @returns {Promise<AxiosResponse<any>>}
  */
 export const basePostRequest = (endPoint, formData) => {
-  let appState = JSON.parse(localStorage.getItem('appState'))
-  let accessToken = ''
+  let appState = JSON.parse(localStorage.getItem('appState'));
+  let accessToken = '';
   if (appState !== null) {
     accessToken = appState.user.accessToken
   }
@@ -24,7 +25,7 @@ export const basePostRequest = (endPoint, formData) => {
   }).then(response => {
     return response.data
   })
-}
+};
 
 /**
  * @function baseFileUploadRequest
@@ -33,8 +34,8 @@ export const basePostRequest = (endPoint, formData) => {
  * @returns {Promise<AxiosResponse<any>>}
  */
 export const baseFileUploadRequest = (endPoint, file) => {
-  let appState = JSON.parse(localStorage.getItem('appState'))
-  let accessToken = ''
+  let appState = JSON.parse(localStorage.getItem('appState'));
+  let accessToken = '';
   if (appState !== null) {
     accessToken = appState.user.accessToken
   }
@@ -49,4 +50,4 @@ export const baseFileUploadRequest = (endPoint, file) => {
   }).then(response => {
     return response.data
   })
-}
+};
