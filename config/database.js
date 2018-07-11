@@ -1,3 +1,3 @@
 module.exports =  {
-  mongoUrl: 'mongodb://localhost/freeSocial'
+  mongoUrl: 'mongodb://localhost:27017/freeSocial'
 };

@@ -8,10 +8,10 @@ import './main.scss'
 
 export default class Footer extends Component {
   handleLinkClick = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     // Open in new tab
     window.open(event.target.href)
-  }
+  };
   render () {
     return (
       <footer className='b-footer'>

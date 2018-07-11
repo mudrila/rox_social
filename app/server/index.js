@@ -10,7 +10,7 @@ const userRouter = require('./user/routes');
 const app = express();
 
 // Configure Mongo
-mongoose.connect(dbConfig.mongoUrl, error => {
+mongoose.connect(dbConfig.mongoUrl, {useNewUrlParser: true}, error => {
   if (error) {
     console.error('Some problems while connecting to Mongo:', error);
     throw error
@@ -22,7 +22,9 @@ app.use(bodyParser.json({ limit: '20mb' }));
 app.use(bodyParser.urlencoded({ limit: '20mb', extended: false}));
 
 app.use(express.static(path.join(__dirname, '../../dist')));
-
+app.get('*', function (request, response) {
+  response.sendFile(path.resolve(__dirname, '../../dist', 'index.html'))
+});
 // End-points
 app.use('/api/user', userRouter);
 

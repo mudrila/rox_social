@@ -6,9 +6,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanPlugin = require('./plugins/clean-plugin');
 
 const config = {
-  entry: path.join(__dirname, './app/public/index.js'),
+  entry: path.join(__dirname, '../../app/public/index.js'),
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, '../../dist'),
     publicPath: '/',
     filename: 'js/bundle.js'
   },
@@ -21,7 +21,7 @@ const config = {
       files: ['dist/static/*']
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './app/public/index.html'),
+      template: path.resolve(__dirname, '../../app/public/index.html'),
       inject: 'body'
     }),
     new ExtractTextPlugin('css/bundle.css', { allChunks: true })
@@ -32,7 +32,7 @@ const config = {
       {
       test: /\.(js|jsx)$/,
       loaders: 'babel-loader',
-      include: path.join(__dirname, 'app/public/'),
+      include: path.join(__dirname, '../../app/public/'),
       },
       {
         test: /\.scss$/,
@@ -40,7 +40,7 @@ const config = {
           fallback: 'style-loader',
           use: 'css-loader!resolve-url-loader!sass-loader?sourceMap&importLoaders=1'
         }),
-        include: path.join(__dirname, 'app/public/')
+        include: path.join(__dirname, '../../app/public/')
       },
       {
         test: /\.css$/,
@@ -54,9 +54,9 @@ const config = {
         use: [{
           loader: 'file-loader',
           options: {
-            name: '[path][name]-[hash].[ext]',
+            name: '[name]-[hash].[ext]',
             limit: 30000,
-            outputPath: 'images',
+            outputPath: 'images/',
           }
         }]
       },
