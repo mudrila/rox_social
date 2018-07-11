@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faStackOverflow, faLinkedin, faReact, faReadme, faFontAwesome } from '@fortawesome/free-brands-svg-icons'
-import immutableIcon from '../../../../assets/images/immutableJS'
-import reduxIcon from '../../../../assets/images/reduxIcon.png'
-import graphQLIcon from '../../../../assets/images/graph-ql-icon'
+import immutableIcon from '../../../../assets/images/icons/immutableJS'
+import reduxIcon from '../../../../assets/images/icons/reduxIcon.png'
+import graphQLIcon from '../../../../assets/images/icons/graph-ql-icon'
 import './main.scss'
 
 export default class Footer extends Component {
