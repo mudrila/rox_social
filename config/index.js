@@ -1,7 +1,7 @@
 const env = process.env;
 
-export default {
+module.exports =  {
   port: env.PORT || 4000,
   mode: env.NODE_MODE || 'development',
   jwtSecret: 'Hello!ThisIsMyFirstNodeJSApp!IamLearningYet:)'
-}
+};
