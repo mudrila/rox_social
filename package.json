@@ -4,7 +4,10 @@
   "description": "Social network learning project",
   "main": "index.js",
   "scripts": {
-    "start": "node app/server/index.js",
+    "start": "npm run development",
+    "start-server": "node app/server/index.js",
+    "development": "npm run build:public:dev && npm run start-server",
+    "production": "npm run build:public:prod && npm run start-server",
     "build:public:dev": "webpack --config ./config/webpack/webpack.dev.js",
     "build:public:prod": "webpack --config ./config/webpack/webpack.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
