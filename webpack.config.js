@@ -4,16 +4,16 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanPlugin = require('./plugins/clean-plugin');
 
-const BUILD_DIR = path.resolve(__dirname, './build');
-const APP_DIR = path.resolve(__dirname, './app/public');
 const config = {
-  entry: {
-    main: APP_DIR + '/index.js'
-  },
+  entry: path.join(__dirname, './app/public/index.js'),
   output: {
-    path: BUILD_DIR,
-    publicPath: '',
+    path: path.join(__dirname, 'dist'),
+    publicPath: '/',
     filename: 'js/bundle.js'
+  },
+  mode: 'development',
+  resolve: {
+    extensions: ['.json', '.js', '.jsx'],
   },
   plugins: [
     new CleanPlugin({

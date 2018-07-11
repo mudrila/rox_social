@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const APIUrl = '/api/';
+export const APIUrl = '/api/';
 
 /**
  * @function basePostRequest - function, which will make POST request to endpoint with given data and return request data

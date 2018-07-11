@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import APIUrl from '../../../../../config/api'
+import APIUrl from '../../../Root/redux/middlewares/APIServiceBases'
 import Button from '@material-ui/core/Button'
 import './main.scss'
 
 export default class UserPage extends Component {
   constructor (props) {
-    super(props)
+    super(props);
     this.state = {
       formDisabled: true,
       userDataFormValues: {
@@ -31,21 +31,21 @@ export default class UserPage extends Component {
       logout: PropTypes.func,
       uploadAvatar: PropTypes.func
     })
-  }
+  };
   handleAvatarUpload = (event) => {
-    event.preventDefault()
-    let fileFormData = new FormData()
-    fileFormData.append('avatar', this.state.userDataFormValues.userAvatar)
+    event.preventDefault();
+    let fileFormData = new FormData();
+    fileFormData.append('avatar', this.state.userDataFormValues.userAvatar);
     if (this.state.userDataFormValues.userAvatar) {
       this.props.userActions.uploadAvatar(this.props.user.uuid, fileFormData)
     }
-  }
+  };
   toggleUserDataForm = () => {
     this.setState({formDisabled: !this.state.formDisabled})
-  }
+  };
   handleUserDataFormSubmit = (event) => {
     event.preventDefault()
-  }
+  };
   handleUserDataInputChange = (event) => {
     if (event.target.name === 'userAvatar') {
       // Save file to state
@@ -63,16 +63,16 @@ export default class UserPage extends Component {
         }
       })
     }
-  }
+  };
   render () {
-    let {formDisabled, userDataFormValues} = this.state
+    let {formDisabled, userDataFormValues} = this.state;
     const UserDataFormButton = () => {
       if (formDisabled === true) {
         return <Button color='primary' variant='outlined' onClick={this.toggleUserDataForm}>Edit</Button>
       } else {
         return <Button color='primary' variant='outlined' onClick={this.handleUserDataFormSubmit}>Submit</Button>
       }
-    }
+    };
     return (
       <article className='b-user-page'>
         <h1 className='b-user-page__header'>Hello, {this.props.user.name}</h1>
