@@ -19,7 +19,7 @@
 .b-main-header__meta-container .logo {
   margin-left: 5px;
   margin-right: 5px;
-  color: #3E3E3E;
+  color: #495057;
 }
 
 .b-main-header__meta-container .slogan {
@@ -52,13 +52,13 @@
 .b-main-header__main-menu__menu-items-container__menu-item-container__menu-item {
   transition: all 0.1s ease-in-out;
   text-decoration: none;
-  color: #3E3E3E;
+  color: #495057;
   padding-bottom: 5px;
 }
 
 .b-main-header__main-menu__menu-items-container__menu-item-container__menu-item:visited {
   transition: all 0.1s ease-in-out;
-  color: #3E3E3E;
+  color: #495057;
 }
 
 .b-main-header__main-menu__menu-items-container__menu-item-container__menu-item:hover {
@@ -128,8 +128,8 @@
 
 .b-registration-form__form-group {
   display: flex;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
   width: 100%;
 }
 
@@ -165,8 +165,6 @@
   width: 100%;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  margin-bottom: 10px !important;
-  margin-top: 10px !important;
 }
 
 .b-login-form__form-group.b-form-control {
@@ -208,7 +206,7 @@
   display: flex;
   flex-wrap: wrap;
   font-size: 14px;
-  color: #3E3E3E;
+  color: #495057;
   padding: 5vh 5% 15vh 5%;
 }
 
@@ -390,7 +388,7 @@
 .b-footer__b-about-author__link:visited,
 .b-footer__b-about-project__link:visited,
 .b-footer__b-meta-info__link:visited {
-  color: #3E3E3E;
+  color: #495057;
 }
 
 .b-footer__b-about-author__link:hover,

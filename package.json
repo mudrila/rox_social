@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/mudrila/rox_social#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.1.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.0",
     "@fortawesome/free-brands-svg-icons": "^5.1.0",
     "@fortawesome/free-solid-svg-icons": "^5.1.0",

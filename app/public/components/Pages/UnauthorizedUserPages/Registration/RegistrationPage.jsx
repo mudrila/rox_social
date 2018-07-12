@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
+import { faSignInAlt, faKey, faUser } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './main.scss'
 export default class RegistrationPage extends Component {
   constructor (props) {
@@ -97,7 +99,7 @@ export default class RegistrationPage extends Component {
           placeholder={'Same password again'}
         />
         <section className='b-registration-form__form-group form-group b-form-control'>
-          <Button color='primary' variant='outlined' onClick={this.handleFormSubmit} disabled={!this.state.formValid}>Submit</Button>
+          <Button className={'b-form-control__button'} color='primary' variant='contained' onClick={this.handleFormSubmit} disabled={!this.state.formValid}>Submit <FontAwesomeIcon icon={faSignInAlt}/></Button>
         </section>
       </form>
     )
