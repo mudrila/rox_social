@@ -185,13 +185,8 @@
   width: 100%;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  background-color: #e8e7e8;
   margin-bottom: 10px !important;
   margin-top: 10px !important;
-}
-
-.b-login-form__form-group input {
-  padding-left: 10px;
 }
 
 .b-login-form__form-group.b-form-control {
@@ -217,7 +212,7 @@
 
   #app .b-main-container {
     flex-grow: 1;
-    min-height: auto;
+    min-height: 85vh;
     padding-top: 15vh;
   }
 }
@@ -443,14 +438,16 @@
   #app .b-footer__b-about-author,
   #app .b-footer__b-about-project,
   #app .b-footer__b-meta-info {
-    width: 100%;
+    width: 50%;
     padding: 10px 15px;
+  }
+
+  #app .b-footer__b-about-project {
     border-right: none;
-    border-bottom: 2px solid #61dafb;
   }
 
   #app .b-footer__b-meta-info {
-    border-bottom: none;
+    display: none;
   }
 }
 
