@@ -12,18 +12,26 @@
   &__header {
     display: flex;
     width: 100%;
-    font-size: 26px;
+    font-size: 20px;
     justify-content: center;
+    color: $primary-purple;
   }
-  &__form-group {
-    display: flex;
-    margin-top: 10px;
-    margin-bottom: 10px;
+  &__form-group{
     width: 100%;
-    flex-wrap: wrap;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: $light-gray;
+    margin-bottom: 10px!important;
+    margin-top: 10px!important;
+    input {
+      padding-left: 10px;
+    }
     &.b-form-control {
+      margin-top: 25px;
+      margin-bottom: 25px;
       justify-content: center;
-      &__button {
+      background-color: transparent;
+      .b-form-control__button {
         width: 100%;
       }
     }

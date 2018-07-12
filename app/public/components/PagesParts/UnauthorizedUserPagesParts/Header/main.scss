@@ -21,7 +21,7 @@
     .slogan {
       margin-left: 5px;
       margin-right: 5px;
-      color: $black;
+      color: $primary-purple;
     }
   }
   &__main-menu {
@@ -50,13 +50,13 @@
           }
           &:hover {
             transition: all 0.2s ease-in-out;
-            color: $red;
-            border-bottom: 2px solid $red;
+            color: $primary-purple;
+            border-bottom: 2px solid $primary-purple;
           }
           &.active {
             transition: all 0.2s ease-in-out;
-            color: $red;
-            border-bottom: 2px solid $red;
+            color: $primary-purple;
+            border-bottom: 2px solid $primary-purple;
           }
         }
       }

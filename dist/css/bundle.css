@@ -25,7 +25,7 @@
 .b-main-header__meta-container .slogan {
   margin-left: 5px;
   margin-right: 5px;
-  color: #3E3E3E;
+  color: #303f9f;
 }
 
 .b-main-header__main-menu {
@@ -63,14 +63,14 @@
 
 .b-main-header__main-menu__menu-items-container__menu-item-container__menu-item:hover {
   transition: all 0.2s ease-in-out;
-  color: #b70833;
-  border-bottom: 2px solid #b70833;
+  color: #303f9f;
+  border-bottom: 2px solid #303f9f;
 }
 
 .b-main-header__main-menu__menu-items-container__menu-item-container__menu-item.active {
   transition: all 0.2s ease-in-out;
-  color: #b70833;
-  border-bottom: 2px solid #b70833;
+  color: #303f9f;
+  border-bottom: 2px solid #303f9f;
 }
 
 .b-main-header {
@@ -150,7 +150,7 @@
 .b-registration-form__form-group__input_required {
   display: flex;
   border-radius: 5px;
-  border: 0.5px solid #3f51b5;
+  border: 0.5px solid #303f9f;
   background-color: #ece9e6;
   height: 40px;
   padding-left: 5px;
@@ -176,23 +176,32 @@
 .b-login-form__header {
   display: flex;
   width: 100%;
-  font-size: 26px;
+  font-size: 20px;
   justify-content: center;
+  color: #303f9f;
 }
 
 .b-login-form__form-group {
-  display: flex;
-  margin-top: 10px;
-  margin-bottom: 10px;
   width: 100%;
-  flex-wrap: wrap;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #e8e7e8;
+  margin-bottom: 10px !important;
+  margin-top: 10px !important;
+}
+
+.b-login-form__form-group input {
+  padding-left: 10px;
 }
 
 .b-login-form__form-group.b-form-control {
+  margin-top: 25px;
+  margin-bottom: 25px;
   justify-content: center;
+  background-color: transparent;
 }
 
-.b-login-form__form-group.b-form-control__button {
+.b-login-form__form-group.b-form-control .b-form-control__button {
   width: 100%;
 }
 
@@ -213,8 +222,12 @@
   }
 }
 
+#app {
+  font-family: Roboto, sans-serif;
+}
+
 .b-main-container {
-  background-color: #f5f5f5;
+  background-color: #e8e7e8;
   min-width: 100vw;
   min-height: 100vh;
   display: flex;
@@ -302,7 +315,7 @@
 }
 
 .b-user-page__b-user-avatar__form__b-form-group__input:disabled {
-  background-color: #f5f5f5;
+  background-color: #e8e7e8;
 }
 
 .b-user-page__b-user-avatar__form__b-form-group__button {
@@ -342,7 +355,7 @@
 }
 
 .b-user-page__b-user-data__form__b-form-group__input:disabled {
-  background-color: #f5f5f5;
+  background-color: #e8e7e8;
 }
 
 .b-user-page .b-card {

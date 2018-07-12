@@ -1,4 +1,7 @@
 @import "../../../../assets/scss/variables/colors";
+#app {
+  font-family: Roboto, sans-serif;
+}
 .b-main-container {
   background-color: $light-gray;
   min-width: 100vw;

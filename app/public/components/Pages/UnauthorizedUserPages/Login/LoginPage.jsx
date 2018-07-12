@@ -46,22 +46,21 @@ export default class LoginPage extends Component {
     let { userEmail, userPassword } = this.state.formValues;
     return (
       <form name='login-form' className='b-login-form' autoComplete={'off'}>
-        <h1 className='b-login-form__header'>Sign In to FreeSocial</h1>
+        <h3 className='b-login-form__header'>Sign In to FreeSocial</h3>
         <TextField
           required
           label="Email"
-          className='b-login-form__form-group mdc-text-field--outlined'
+          className='b-login-form__form-group'
           id='email'
           value={userEmail}
           onChange={this.handleInputChange}
           name={'userEmail'}
           type='email'
-          variant={'outlined'}
           autoComplete={'off'}
         />
         <TextField
           required
-          className='b-login-form__form-group mdc-text-field--outlined'
+          className='b-login-form__form-group'
           type='password'
           id={'user-password'}
           name={'userPassword'}
@@ -71,7 +70,7 @@ export default class LoginPage extends Component {
           autoComplete={'off'}
         />
         <section className='b-login-form__form-group form-group b-form-control'>
-          <Button className='b-login-form__form-group b-form-control__button' color='primary' variant='outlined' onClick={this.handleFormSubmit} disabled={!this.state.formValid}>Submit</Button>
+          <Button className='b-login-form__form-group__e-button b-form-control__button' color='primary' variant='outlined' onClick={this.handleFormSubmit} disabled={!this.state.formValid}>Submit</Button>
         </section>
       </form>
     )
