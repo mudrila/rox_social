@@ -1,5 +1,11 @@
 @import "../../../../assets/scss/variables/colors";
 .b-login-form {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 25%;
+  bottom: 0;
+  height: 40%;
   display: flex;
   align-self: center;
   background-color: white;
@@ -8,7 +14,8 @@
   flex-wrap: wrap;
   width: 350px;
   padding: 20px;
-  margin: 0 auto;
+  margin: 0 calc((100vw - 350px)/2);
+  transition: all 500ms linear;
   &__header {
     display: flex;
     width: 100%;

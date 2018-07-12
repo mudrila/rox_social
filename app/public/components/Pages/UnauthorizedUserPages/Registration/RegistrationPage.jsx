@@ -5,7 +5,8 @@ import TextField from '@material-ui/core/TextField'
 import { faSignInAlt, faKey, faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './main.scss'
-export default class RegistrationPage extends Component {
+
+class RegistrationPage extends Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -105,3 +106,5 @@ export default class RegistrationPage extends Component {
     )
   }
 }
+
+export default RegistrationPage

@@ -2,9 +2,6 @@
   #app {
     display: flex;
     flex-direction: column;
-    .b-main-header {
-      min-height: 10vh;
-    }
     .b-main-container {
       flex-grow: 1;
       min-height: 85vh;

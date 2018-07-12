@@ -7,7 +7,7 @@ import TextField from '@material-ui/core/TextField'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './main.scss'
 
-export default class LoginPage extends Component {
+class LoginPage extends Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -98,3 +98,5 @@ export default class LoginPage extends Component {
     )
   }
 }
+
+export default LoginPage

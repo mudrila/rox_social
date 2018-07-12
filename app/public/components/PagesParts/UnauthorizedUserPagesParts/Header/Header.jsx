@@ -1,27 +1,21 @@
 import React, {Component} from 'react'
 import {NavLink} from 'react-router-dom'
+import AppBar from "@material-ui/core/AppBar"
+import Toolbar from '@material-ui/core/Toolbar'
+import Typography from "@material-ui/core/Typography"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserFriends, faSignInAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons'
+import { faSignInAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons'
 import './main.scss'
 export default class Header extends Component {
   render () {
     return (
-      <header className='b-main-header unauthorized-header'>
-        <div className='b-main-header__meta-container'>
-          <FontAwesomeIcon icon={faUserFriends} color={'red'}/>
-          <span className='slogan'>Social Rox</span>
-        </div>
-        <nav className='b-main-header__main-menu'>
-          <ul className='b-main-header__main-menu__menu-items-container'>
-            <li className='b-main-header__main-menu__menu-items-container__menu-item-container'>
-              <NavLink className='b-main-header__main-menu__menu-items-container__menu-item-container__menu-item' activeClassName={'active'} to={'/login'}>Sign In <FontAwesomeIcon icon={faSignInAlt}/> </NavLink>
-            </li>
-            <li className='b-main-header__main-menu__menu-items-container__menu-item-container'>
-              <NavLink className='b-main-header__main-menu__menu-items-container__menu-item-container__menu-item' activeClassName={'active'} to={'/registration'}>Sign Up <FontAwesomeIcon icon={faUserPlus}/></NavLink>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <AppBar position={'fixed'} className={'b-main-header'}>
+        <Toolbar>
+          <Typography color={'inherit'} variant='title'>Social Rox</Typography>
+          <NavLink className='b-main-header__main-menu__menu-items-container__menu-item-container__menu-item' activeClassName={'active'} to={'/login'}>Login<FontAwesomeIcon icon={faSignInAlt}/> </NavLink>
+          <NavLink className='b-main-header__main-menu__menu-items-container__menu-item-container__menu-item' activeClassName={'active'} to={'/registration'}>Sign Up <FontAwesomeIcon icon={faUserPlus}/></NavLink>
+        </Toolbar>
+      </AppBar>
     )
   }
 }
