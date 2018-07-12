@@ -356,6 +356,15 @@
   }
 }
 
+@media (min-width: 320px) and (max-width: 800px) {
+  .b-transition-container .b-registration-form {
+    margin: 0 auto;
+    top: 10%;
+    height: 100%;
+    width: 100%;
+  }
+}
+
 .b-registration-form {
   display: flex;
   align-self: center;
@@ -396,15 +405,6 @@
 
 .b-registration-form__form-group.b-form-control .b-form-control__button {
   width: 100%;
-}
-
-@media (min-width: 320px) and (max-width: 800px) {
-  .b-transition-container .b-registration-form {
-    margin: 0 auto;
-    top: 10%;
-    height: 100%;
-    width: 100%;
-  }
 }
 
 @media (min-width: 320px) and (max-width: 800px) {
