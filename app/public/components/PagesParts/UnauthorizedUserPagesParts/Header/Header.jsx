@@ -9,7 +9,7 @@ export default class Header extends Component {
       <header className='b-main-header unauthorized-header'>
         <div className='b-main-header__meta-container'>
           <FontAwesomeIcon icon={faUserFriends} color={'red'}/>
-          <span className='slogan'>Free Social connect</span>
+          <span className='slogan'>Social Rox</span>
         </div>
         <nav className='b-main-header__main-menu'>
           <ul className='b-main-header__main-menu__menu-items-container'>

@@ -13,16 +13,6 @@
     width: 50%;
     align-items: center;
     padding-left: 30px;
-    .logo {
-      margin-left: 5px;
-      margin-right: 5px;
-      color: $light-gray;
-    }
-    .slogan {
-      margin-left: 5px;
-      margin-right: 5px;
-      color: $light-gray;
-    }
   }
   &__main-menu {
     display: flex;
@@ -35,21 +25,6 @@
       margin: 0;
       justify-content: flex-end;
       padding-right: 30px;
-      &__menu-item-container {
-        margin-left: 5px;
-        margin-right: 5px;
-        list-style: none;
-        &__menu-item {
-          text-decoration: none;
-          color: $light-gray;
-          &:visited {
-            color: $light-gray;
-          }
-          &:hover {
-            color: $red;
-          }
-        }
-      }
     }
   }
 }

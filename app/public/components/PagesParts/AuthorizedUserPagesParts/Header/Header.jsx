@@ -8,17 +8,17 @@ import './main.scss'
 export default class Header extends Component {
   static propTypes = {
     handleSignOut: PropTypes.func
-  }
+  };
   handleSignOut = (event) => {
     event.preventDefault()
     this.props.handleSignOut()
-  }
+  };
   render () {
     return (
       <header className='b-main-header unauthorized-header'>
         <div className='b-main-header__meta-container'>
           <FontAwesomeIcon icon={faUserFriends} color={'blue'}/>
-          <span className='slogan'>Free Social connect</span>
+          <span className='slogan'>Social Rox</span>
         </div>
         <nav className='b-main-header__main-menu'>
           <ul className='b-main-header__main-menu__menu-items-container'>

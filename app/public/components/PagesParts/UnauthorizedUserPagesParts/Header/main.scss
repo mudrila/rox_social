@@ -40,13 +40,23 @@
         margin-right: 5px;
         list-style: none;
         &__menu-item {
+          transition: all 0.2s ease-in-out;
           text-decoration: none;
           color: $black;
+          padding-bottom: 5px;
           &:visited {
+            transition: all 0.2s ease-in-out;
             color: $black;
           }
           &:hover {
+            transition: all 0.2s ease-in-out;
             color: $red;
+            border-bottom: 2px solid $red;
+          }
+          &.active {
+            transition: all 0.2s ease-in-out;
+            color: $red;
+            border-bottom: 2px solid $red;
           }
         }
       }
