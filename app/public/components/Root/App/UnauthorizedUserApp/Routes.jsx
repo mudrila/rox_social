@@ -8,7 +8,7 @@ class Routes extends Component {
     return (
       <Route render={( { location }) => (
         <TransitionGroup className={'b-transition-container'}>
-          <CSSTransition key={location.key} classNames={'fade'} timeout={500}>
+          <CSSTransition key={location.key} classNames={'fade'} timeout={100}>
             <Switch location={location}>
               <Route path={'/'} exact render={() => <Redirect to={'/login'} /> }/>
               <Route path='/registration' component={RegistrationPageContainer}/>

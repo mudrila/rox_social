@@ -194,19 +194,19 @@
   height: 100%;
 }
 
-.fade-enter {
+.b-main-container .b-transition-container .fade-enter {
   opacity: 0;
   z-index: 1;
   transition: all 500ms ease-in;
   margin: 0;
 }
 
-.fade-enter-active {
+.b-main-container .b-transition-container .fade-enter-active {
   opacity: 0.3;
   transition: all 500ms ease-in;
 }
 
-.fade-enter-done {
+.b-main-container .b-transition-container .fade-enter-done {
   opacity: 1;
   transition: all 500ms ease-in;
 }
@@ -365,15 +365,6 @@
   }
 }
 
-@media (min-width: 320px) and (max-width: 800px) {
-  .b-transition-container .b-login-form {
-    margin: 0 auto;
-    width: 280px;
-    height: 50vh;
-    padding: 10px;
-  }
-}
-
 .b-registration-form {
   display: flex;
   align-self: center;
@@ -390,7 +381,7 @@
   top: 20%;
   bottom: 0;
   transition: all 500ms linear;
-  height: 50%;
+  height: 60%;
 }
 
 .b-registration-form__header {
@@ -414,6 +405,15 @@
 
 .b-registration-form__form-group.b-form-control .b-form-control__button {
   width: 100%;
+}
+
+@media (min-width: 320px) and (max-width: 800px) {
+  .b-transition-container .b-login-form {
+    margin: 0 auto;
+    width: 280px;
+    height: 50vh;
+    padding: 10px;
+  }
 }
 
 .b-login-form {
