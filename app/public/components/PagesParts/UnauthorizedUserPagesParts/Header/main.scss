@@ -40,21 +40,21 @@
         margin-right: 5px;
         list-style: none;
         &__menu-item {
-          transition: all 0.2s ease-in-out;
+          transition: all 0.1s ease-in-out;
           text-decoration: none;
           color: $black;
           padding-bottom: 5px;
           &:visited {
-            transition: all 0.2s ease-in-out;
+            transition: all 0.1s ease-in-out;
             color: $black;
           }
           &:hover {
-            transition: all 0.2s ease-in-out;
+            transition: all 0.1s ease-in-out;
             color: $primary-purple;
             border-bottom: 2px solid $primary-purple;
           }
           &.active {
-            transition: all 0.2s ease-in-out;
+            transition: all 0.1s ease-in-out;
             color: $primary-purple;
             border-bottom: 2px solid $primary-purple;
           }

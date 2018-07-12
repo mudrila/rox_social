@@ -50,25 +50,25 @@
 }
 
 .b-main-header__main-menu__menu-items-container__menu-item-container__menu-item {
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
   text-decoration: none;
   color: #3E3E3E;
   padding-bottom: 5px;
 }
 
 .b-main-header__main-menu__menu-items-container__menu-item-container__menu-item:visited {
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
   color: #3E3E3E;
 }
 
 .b-main-header__main-menu__menu-items-container__menu-item-container__menu-item:hover {
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
   color: #303f9f;
   border-bottom: 2px solid #303f9f;
 }
 
 .b-main-header__main-menu__menu-items-container__menu-item-container__menu-item.active {
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
   color: #303f9f;
   border-bottom: 2px solid #303f9f;
 }
@@ -121,8 +121,9 @@
 .b-registration-form__header {
   display: flex;
   width: 100%;
-  font-size: 26px;
+  font-size: 20px;
   justify-content: center;
+  color: #303f9f;
 }
 
 .b-registration-form__form-group {
@@ -132,33 +133,12 @@
   width: 100%;
 }
 
-.b-registration-form__form-group__label_required {
-  width: 35%;
-  display: flex;
-  align-items: center;
-}
-
-.b-registration-form__form-group__label_required::after {
-  content: '*';
-  color: #b70833;
-  display: flex;
-  font-size: 14px;
-  margin-right: 3px;
-  margin-left: 5px;
-}
-
-.b-registration-form__form-group__input_required {
-  display: flex;
-  border-radius: 5px;
-  border: 0.5px solid #303f9f;
-  background-color: #ece9e6;
-  height: 40px;
-  padding-left: 5px;
-  justify-self: center;
-}
-
 .b-registration-form__form-group.b-form-control {
   justify-content: center;
+}
+
+.b-registration-form__form-group.b-form-control .b-form-control__button {
+  width: 100%;
 }
 
 .b-login-form {
@@ -392,7 +372,7 @@
   display: flex;
   width: 100%;
   justify-content: flex-start;
-  color: #3E3E3E;
+  color: #303f9f;
   margin-top: 0;
 }
 
@@ -402,7 +382,7 @@
   display: flex;
   width: 100%;
   justify-content: flex-start;
-  color: #3E3E3E;
+  color: #303f9f;
   text-decoration: none;
   align-items: center;
 }
@@ -416,7 +396,7 @@
 .b-footer__b-about-author__link:hover,
 .b-footer__b-about-project__link:hover,
 .b-footer__b-meta-info__link:hover {
-  color: #b70833;
+  color: #303f9f;
 }
 
 .b-footer__b-about-author__link__icon,
