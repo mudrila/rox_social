@@ -4,7 +4,8 @@ import { faGithub, faStackOverflow, faLinkedin, faReact, faReadme, faFontAwesome
 import immutableIcon from '../../../../assets/images/icons/immutableJS'
 import reduxIcon from '../../../../assets/images/icons/reduxIcon.png'
 import graphQLIcon from '../../../../assets/images/icons/graph-ql-icon'
-import './main.scss'
+import './styles/main.scss'
+import './styles/adaptive.scss'
 
 export default class Footer extends Component {
   handleLinkClick = (event) => {
