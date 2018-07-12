@@ -365,6 +365,15 @@
   }
 }
 
+@media (min-width: 320px) and (max-width: 800px) {
+  .b-transition-container .b-login-form {
+    margin: 0 auto;
+    width: 280px;
+    height: 50vh;
+    padding: 10px;
+  }
+}
+
 .b-registration-form {
   display: flex;
   align-self: center;
@@ -405,15 +414,6 @@
 
 .b-registration-form__form-group.b-form-control .b-form-control__button {
   width: 100%;
-}
-
-@media (min-width: 320px) and (max-width: 800px) {
-  .b-login-form {
-    margin: 0 auto;
-    width: 280px;
-    height: 50vh;
-    padding: 10px;
-  }
 }
 
 .b-login-form {
