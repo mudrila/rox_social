@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Button from '@material-ui/core/Button'
+import InputAdornment from '@material-ui/core/InputAdornment'
 import TextField from '@material-ui/core/TextField'
-import { faSignInAlt, faKey, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faSignInAlt, faKey, faUser, faCheck, faAt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './main.scss'
 
@@ -67,6 +68,13 @@ class RegistrationPage extends Component {
           id={'user-name'}
           className='b-registration-form__form-group'
           onChange={this.handleInputChange}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position={'end'}>
+                <FontAwesomeIcon icon={faUser}/>
+              </InputAdornment>
+            )
+          }}
         />
         <TextField
           required
@@ -77,6 +85,13 @@ class RegistrationPage extends Component {
           id={'user-email'}
           name={'userEmail'}
           label={'Your email'}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position={'end'}>
+                <FontAwesomeIcon icon={faAt}/>
+              </InputAdornment>
+            )
+          }}
         />
         <TextField
           required
@@ -87,6 +102,13 @@ class RegistrationPage extends Component {
           id={'user-password'}
           name={'userPassword'}
           label={'Your password'}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position={'end'}>
+                <FontAwesomeIcon icon={faKey}/>
+              </InputAdornment>
+            )
+          }}
         />
         <TextField
           required
@@ -96,8 +118,15 @@ class RegistrationPage extends Component {
           type={'password'}
           id={'user-confirm-password'}
           name={'userConfirmPassword'}
-          label={'Confirm'}
+          label={'Confirm password'}
           placeholder={'Same password again'}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position={'end'}>
+                <FontAwesomeIcon icon={faCheck}/>
+              </InputAdornment>
+            )
+          }}
         />
         <section className='b-registration-form__form-group form-group b-form-control'>
           <Button className={'b-form-control__button'} color='primary' variant='contained' onClick={this.handleFormSubmit} disabled={!this.state.formValid}>Submit <FontAwesomeIcon icon={faSignInAlt}/></Button>
