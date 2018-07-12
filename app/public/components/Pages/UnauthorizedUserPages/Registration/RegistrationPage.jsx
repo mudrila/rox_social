@@ -5,7 +5,8 @@ import InputAdornment from '@material-ui/core/InputAdornment'
 import TextField from '@material-ui/core/TextField'
 import { faSignInAlt, faKey, faUser, faCheck, faAt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import './main.scss'
+import './styles/main.scss'
+import './styles/adaptive.scss'
 
 class RegistrationPage extends Component {
   constructor (props) {

@@ -6,6 +6,9 @@
       flex-grow: 1;
       min-height: 85vh;
       padding-top: 15vh;
+      .b-transition-container {
+        overflow: scroll;
+      }
     }
   }
 }

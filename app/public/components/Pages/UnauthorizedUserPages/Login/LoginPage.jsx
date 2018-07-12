@@ -5,7 +5,8 @@ import InputAdornment from '@material-ui/core/InputAdornment'
 import { faSignInAlt,faKey, faUserCircle  } from '@fortawesome/free-solid-svg-icons'
 import TextField from '@material-ui/core/TextField'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import './main.scss'
+import './styles/main.scss'
+import './styles/adaptive.scss'
 
 class LoginPage extends Component {
   constructor (props) {
