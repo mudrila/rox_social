@@ -76,7 +76,6 @@ export default class UserPage extends Component {
     };
     return (
       <article className='b-user-page'>
-        <h1 className='b-user-page__header'>Hello, {this.props.user.name}</h1>
         <section className='b-user-page__b-user-avatar b-card'>
           <img src={`${APIUrl}user/${this.props.user.uuid}/avatar/`} />
           <fieldset className='b-user-page__b-user-avatar__form__b-form-group'>

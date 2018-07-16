@@ -17,7 +17,7 @@ export default class App extends Component {
   };
   render () {
     if (this.props.user.isAuthenticated === true) {
-      return <AuthorizedUserApp userActions={this.props.userActions}/>
+      return <AuthorizedUserApp userActions={this.props.userActions} user={this.props.user}/>
     } else {
       return <UnauthorizedUserApp />
     }

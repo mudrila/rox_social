@@ -8,23 +8,4 @@
   position: fixed;
   box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  &__meta-container {
-    display: flex;
-    width: 50%;
-    align-items: center;
-    padding-left: 30px;
-  }
-  &__main-menu {
-    display: flex;
-    width: 50%;
-    align-items: center;
-    &__menu-items-container {
-      width: 100%;
-      display: flex;
-      padding-left: 0;
-      margin: 0;
-      justify-content: flex-end;
-      padding-right: 30px;
-    }
-  }
 }
