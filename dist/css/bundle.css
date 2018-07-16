@@ -1,10 +1,7 @@
 @media (min-width: 320px) and (max-width: 800px) {
-  .b-transition-container .b-registration-form {
-    margin: 0 auto;
-    top: 10%;
-    min-height: 50vh;
-    max-height: 70vh;
-    width: 100%;
+  #app .authorized-content {
+    padding-right: 10px;
+    padding-left: 10px;
   }
 }
 
@@ -100,29 +97,16 @@
 }
 
 @media (min-width: 320px) and (max-width: 800px) {
-  #app {
-    display: flex;
+  #app .b-user-page {
+    justify-content: center;
   }
 
-  #app .b-main-container {
-    flex-grow: 1;
-    min-height: 85vh;
-    padding-top: 15vh;
-  }
-
-  #app .b-main-container .b-transition-container {
-    overflow: scroll;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 800px) {
   #app .b-user-page__header {
     margin-top: 0;
   }
 
   #app .b-user-page__b-user-avatar {
-    width: 45%;
-    margin-right: 10px;
+    width: 100%;
     margin-bottom: 10px;
     text-align: center;
   }
@@ -136,8 +120,7 @@
   }
 
   #app .b-user-page__b-user-data {
-    width: 45%;
-    margin-left: 10px;
+    width: 100%;
     margin-bottom: 10px;
   }
 
@@ -152,17 +135,6 @@
   #app .b-user-page__b-user-data__form__b-form-group__input {
     width: 100%;
   }
-}
-
-.b-main-header {
-  display: flex;
-  flex-wrap: nowrap;
-  background-color: white;
-  min-height: 5vh;
-  width: 100%;
-  position: fixed;
-  box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
 }
 
 .b-user-page {
@@ -251,6 +223,49 @@
   border-radius: 5px;
 }
 
+@media (min-width: 320px) and (max-width: 400px) {
+  .b-main-header__slogan {
+    display: none !important;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 800px) {
+  #app {
+    display: flex;
+  }
+
+  #app .b-main-container {
+    flex-grow: 1;
+    min-height: 85vh;
+    padding-top: 15vh;
+  }
+
+  #app .b-main-container .b-transition-container {
+    overflow: scroll;
+  }
+}
+
+.b-main-header {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: white;
+  min-height: 5vh;
+  width: 100%;
+  position: fixed;
+  box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+@media (min-width: 320px) and (max-width: 800px) {
+  .b-transition-container .b-registration-form {
+    margin: 0 auto;
+    top: 10%;
+    min-height: 50vh;
+    max-height: 70vh;
+    width: 100%;
+  }
+}
+
 .b-registration-form {
   display: flex;
   align-self: center;
@@ -269,6 +284,7 @@
   transition: all 500ms linear;
   flex-direction: column;
   flex: 1 1 auto;
+  max-height: 50vh;
 }
 
 .b-registration-form__header {
@@ -310,6 +326,12 @@
   flex-grow: 1;
 }
 
+@media (min-width: 320px) and (max-width: 800px) {
+  .unauthorized-content {
+    width: 100vw;
+  }
+}
+
 .b-login-form {
   position: absolute;
   left: 0;
@@ -317,6 +339,7 @@
   top: 25%;
   bottom: 0;
   min-height: 40%;
+  max-height: 40vh;
   display: flex;
   align-self: center;
   background-color: white;
@@ -352,12 +375,6 @@
 
 .b-login-form__form-group.b-form-control .b-form-control__button {
   width: 100%;
-}
-
-@media (min-width: 320px) and (max-width: 800px) {
-  .unauthorized-content {
-    width: 100vw;
-  }
 }
 
 

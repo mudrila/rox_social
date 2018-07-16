@@ -1,12 +1,12 @@
 @media (min-width: 320px) and (max-width: 800px) {
   #app {
     .b-user-page {
+      justify-content: center;
       &__header {
         margin-top: 0;
       }
       &__b-user-avatar {
-        width: 45%;
-        margin-right: 10px;
+        width: 100%;
         margin-bottom: 10px;
         text-align: center;
         &__form {
@@ -19,8 +19,7 @@
         }
       }
       &__b-user-data {
-        width: 45%;
-        margin-left: 10px;
+        width: 100%;
         margin-bottom: 10px;
         &__form {
           justify-content: center;

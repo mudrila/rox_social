@@ -19,7 +19,8 @@ import {
           faChevronLeft
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import './main.scss'
+import './styles/main.scss'
+import './styles/adaptive.scss'
 
 const drawerWidth = 240;
 
@@ -109,7 +110,7 @@ class Header extends Component {
             <IconButton color="inherit" aria-label="Menu" onClick={this.openMenu} className={classNames(classes.menuButton, this.state.menuOpen && classes.hide)}>
               <FontAwesomeIcon icon={faBars} color={'white'}/>
             </IconButton>
-            <Typography color={'inherit'} variant='title'>Social Rox</Typography>
+            <Typography color={'inherit'} variant='title' className={'b-main-header__slogan'}>Social Rox</Typography>
             <h3 className='b-main-header__greeting'>{this.props.user.name}</h3>
             <Avatar alt={this.props.user.name} src={`${APIUrl}user/${this.props.user.uuid}/avatar/`} className={classNames(classes.avatar)}/>
           </Toolbar>

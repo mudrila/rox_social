@@ -5,6 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Routes from './Routes'
 import Header from '../../../PagesParts/AuthorizedUserPagesParts/Header/Header'
 import './styles/main.scss'
+import './styles/adaptive.scss'
 
 const styles = {
   content: {
