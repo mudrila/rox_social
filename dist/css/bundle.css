@@ -2,20 +2,10 @@
   .b-transition-container .b-registration-form {
     margin: 0 auto;
     top: 10%;
-    height: 100%;
+    min-height: 50vh;
+    max-height: 70vh;
     width: 100%;
   }
-}
-
-.b-main-header {
-  display: flex;
-  flex-wrap: nowrap;
-  background-color: white;
-  min-height: 5vh;
-  width: 100%;
-  position: fixed;
-  box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
 }
 
 .b-main-header {
@@ -112,7 +102,6 @@
 @media (min-width: 320px) and (max-width: 800px) {
   #app {
     display: flex;
-    flex-direction: column;
   }
 
   #app .b-main-container {
@@ -163,6 +152,17 @@
   #app .b-user-page__b-user-data__form__b-form-group__input {
     width: 100%;
   }
+}
+
+.b-main-header {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: white;
+  min-height: 5vh;
+  width: 100%;
+  position: fixed;
+  box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
 .b-user-page {
@@ -264,10 +264,11 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 20%;
+  top: 15%;
   bottom: 0;
   transition: all 500ms linear;
-  height: 60%;
+  flex-direction: column;
+  flex: 1 1 auto;
 }
 
 .b-registration-form__header {
@@ -297,9 +298,16 @@
   .b-transition-container .b-login-form {
     margin: 0 auto;
     width: 280px;
-    height: 50vh;
+    min-height: 50vh;
+    max-height: 55vh;
     padding: 10px;
+    top: 15%;
   }
+}
+
+.unauthorized-content {
+  height: 100vh;
+  flex-grow: 1;
 }
 
 .b-login-form {
@@ -308,7 +316,7 @@
   right: 0;
   top: 25%;
   bottom: 0;
-  height: 40%;
+  min-height: 40%;
   display: flex;
   align-self: center;
   background-color: white;
@@ -346,92 +354,9 @@
   width: 100%;
 }
 
-.b-footer {
-  display: flex;
-  flex-wrap: nowrap;
-  width: 100%;
-  min-height: 5vh;
-  position: fixed;
-  bottom: 0;
-  z-index: 1201;
-  background-color: white;
-  box-shadow: 0 10px 20px 10px rgba(0, 0, 0, 0.1);
-  padding-bottom: 1vh;
-  padding-top: 1vh;
-}
-
-.b-footer__b-about-author,
-.b-footer__b-about-project,
-.b-footer__b-meta-info {
-  display: flex;
-  padding-left: 30px;
-  width: 33%;
-  flex-wrap: wrap;
-  border-right: 2px solid #61dafb;
-}
-
-.b-footer__b-about-author__header,
-.b-footer__b-about-project__header,
-.b-footer__b-meta-info__header {
-  display: flex;
-  width: 100%;
-  justify-content: flex-start;
-  color: #303f9f;
-  margin-top: 0;
-}
-
-.b-footer__b-about-author__link,
-.b-footer__b-about-project__link,
-.b-footer__b-meta-info__link {
-  display: flex;
-  width: 100%;
-  justify-content: flex-start;
-  color: #303f9f;
-  text-decoration: none;
-  align-items: center;
-}
-
-.b-footer__b-about-author__link:visited,
-.b-footer__b-about-project__link:visited,
-.b-footer__b-meta-info__link:visited {
-  color: #495057;
-}
-
-.b-footer__b-about-author__link:hover,
-.b-footer__b-about-project__link:hover,
-.b-footer__b-meta-info__link:hover {
-  color: #303f9f;
-}
-
-.b-footer__b-about-author__link__icon,
-.b-footer__b-about-project__link__icon,
-.b-footer__b-meta-info__link__icon {
-  margin-left: 10px;
-}
-
-.b-footer__b-meta-info {
-  border-right: none;
-}
-
 @media (min-width: 320px) and (max-width: 800px) {
-  #app .b-footer {
-    flex-wrap: wrap;
-    position: relative;
-  }
-
-  #app .b-footer__b-about-author,
-  #app .b-footer__b-about-project,
-  #app .b-footer__b-meta-info {
-    width: 50%;
-    padding: 10px 15px;
-  }
-
-  #app .b-footer__b-about-project {
-    border-right: none;
-  }
-
-  #app .b-footer__b-meta-info {
-    display: none;
+  .unauthorized-content {
+    width: 100vw;
   }
 }
 

@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import Routes from './Routes'
 import Header from '../../../PagesParts/UnauthorizedUserPagesParts/Header/Header'
-import Footer from '../../../PagesParts/General/Footer/Footer'
-import './main.scss'
+import './styles/main.scss'
+import './styles/adaptive.scss'
 class UnauthorizedApp extends Component {
   render () {
     return (
@@ -11,7 +11,6 @@ class UnauthorizedApp extends Component {
         <main className='b-main-container unauthorized-content'>
           <Routes/>
         </main>
-        <Footer/>
       </Fragment>
     )
   }

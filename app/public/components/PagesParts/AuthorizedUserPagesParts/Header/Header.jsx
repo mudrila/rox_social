@@ -97,8 +97,7 @@ class Header extends Component {
   closeMenu = () => {
     this.setState({ menuOpen: false })
   };
-  handleSignOut = (event) => {
-    event.preventDefault();
+  handleSignOut = () => {
     this.props.handleSignOut()
   };
   render () {
@@ -151,7 +150,7 @@ class Header extends Component {
               </ListItemIcon>
               <ListItemText>Settings</ListItemText>
             </ListItem>
-            <ListItem button>
+            <ListItem button onClick={this.handleSignOut}>
               <ListItemIcon>
                 <FontAwesomeIcon icon={faSignOutAlt}/>
               </ListItemIcon>

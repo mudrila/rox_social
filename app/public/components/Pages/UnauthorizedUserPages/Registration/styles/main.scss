@@ -12,10 +12,11 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 20%;
+  top: 15%;
   bottom: 0;
   transition: all 500ms linear;
-  height: 60%;
+  flex-direction: column;
+  flex: 1 1 auto;
   &__header {
     display: flex;
     width: 100%;
