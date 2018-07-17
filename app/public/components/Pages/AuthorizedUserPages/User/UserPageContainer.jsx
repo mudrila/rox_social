@@ -9,10 +9,10 @@ const mapStateToProps = (state) => {
   return {
     user: state.get('user')
   }
-}
+};
 const mapDispatchToProps = (dispatch) => {
   return {
     userActions: bindActionCreators(userActions, dispatch)
   }
-}
+};
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(immutableComponentToJS(UserPage)))

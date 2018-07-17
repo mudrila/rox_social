@@ -96,47 +96,6 @@
   transition: all 500ms ease-in;
 }
 
-@media (min-width: 320px) and (max-width: 800px) {
-  #app .b-user-page {
-    justify-content: center;
-  }
-
-  #app .b-user-page__header {
-    margin-top: 0;
-  }
-
-  #app .b-user-page__b-user-avatar {
-    width: 100%;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-
-  #app .b-user-page__b-user-avatar__form__b-form-group {
-    display: none;
-  }
-
-  #app .b-user-page__b-user-avatar__form__b-form-group.active {
-    display: block;
-  }
-
-  #app .b-user-page__b-user-data {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-
-  #app .b-user-page__b-user-data__form {
-    justify-content: center;
-  }
-
-  #app .b-user-page__b-user-data__form__b-form-group__label {
-    display: none;
-  }
-
-  #app .b-user-page__b-user-data__form__b-form-group__input {
-    width: 100%;
-  }
-}
-
 .b-user-page {
   display: flex;
   width: 100%;
@@ -223,6 +182,47 @@
   border-radius: 5px;
 }
 
+@media (min-width: 320px) and (max-width: 800px) {
+  #app .b-user-page {
+    justify-content: center;
+  }
+
+  #app .b-user-page__header {
+    margin-top: 0;
+  }
+
+  #app .b-user-page__b-user-avatar {
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  #app .b-user-page__b-user-avatar__form__b-form-group {
+    display: none;
+  }
+
+  #app .b-user-page__b-user-avatar__form__b-form-group.active {
+    display: block;
+  }
+
+  #app .b-user-page__b-user-data {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #app .b-user-page__b-user-data__form {
+    justify-content: center;
+  }
+
+  #app .b-user-page__b-user-data__form__b-form-group__label {
+    display: none;
+  }
+
+  #app .b-user-page__b-user-data__form__b-form-group__input {
+    width: 100%;
+  }
+}
+
 @media (min-width: 320px) and (max-width: 400px) {
   .b-main-header__slogan {
     display: none !important;
@@ -262,6 +262,33 @@
   position: fixed;
   box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+}
+
+.b-main-header__menu-title {
+  display: flex;
+  flex: 1;
+  padding-left: 16px;
+}
+
+.b-main-header__link-container.active {
+  border-right: 2px solid #303f9f;
+}
+
+.b-main-header__link-container__link {
+  width: 100%;
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  text-align: left;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  color: #303f9f;
+}
+
+.b-main-header__link-container__link.active svg,
+.b-main-header__link-container__link.active span {
+  color: #303f9f;
 }
 
 .b-registration-form {
