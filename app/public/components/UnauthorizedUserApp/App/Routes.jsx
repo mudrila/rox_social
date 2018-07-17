@@ -13,6 +13,7 @@ class Routes extends Component {
               <Route path={'/'} exact render={() => <Redirect to={'/login'} /> }/>
               <Route path='/registration' component={RegistrationPageContainer}/>
               <Route path='/login' component={LoginPageContainer}/>
+              <Redirect to={'/login'}/>
             </Switch>
           </CSSTransition>
         </TransitionGroup>

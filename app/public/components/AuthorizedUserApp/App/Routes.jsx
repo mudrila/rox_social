@@ -7,7 +7,7 @@ class Routes extends Component {
     return (
       <Switch>
         <Route exact={true} path='/' component={UserPageContainer}/>
-        <Route path='/friends' component={FriendsPageContainer}/>
+        <Route path='/peoples' component={FriendsPageContainer}/>
         <Redirect to='/'/>
       </Switch>
     )

@@ -134,7 +134,7 @@ class Header extends Component {
             </IconButton>
           </div>
           <Divider />
-          <List>
+          <List component={'nav'}>
             <NavLink className={'b-main-header__link'} activeClassName={'active'} to={'/'} onClick={this.closeMenu} exact={true}>
               <ListItem button>
                   <ListItemIcon>
@@ -143,7 +143,7 @@ class Header extends Component {
                   <ListItemText>Profile</ListItemText>
               </ListItem>
             </NavLink>
-            <NavLink className={'b-main-header__link'} activeClassName={'active'} to={'/friends'} onClick={this.closeMenu}>
+            <NavLink className={'b-main-header__link'} activeClassName={'active'} to={'/peoples'} onClick={this.closeMenu}>
               <ListItem button>
                   <ListItemIcon>
                     <FontAwesomeIcon icon={faUserFriends}/>
