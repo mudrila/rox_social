@@ -8,7 +8,7 @@ import {APIUrl} from "../../../Root/redux/middlewares/APIServiceBases"
 import { withStyles } from '@material-ui/core/styles'
 import classNames from 'classnames'
 import IconButton from '@material-ui/core/IconButton'
-import Drawer from '@material-ui/core/Drawer'
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
@@ -115,8 +115,8 @@ class Header extends Component {
             <Avatar alt={this.props.user.name} src={`${APIUrl}user/${this.props.user.uuid}/avatar/`} className={classNames(classes.avatar)}/>
           </Toolbar>
         </AppBar>
-        <Drawer open={this.state.menuOpen}
-                         variant={'permanent'}
+        <SwipeableDrawer open={this.state.menuOpen}
+                         variant={'permanent'} onOpen={this.openMenu} onClose={this.closeMenu}
                          classes={{
                            paper: classNames(classes.drawerPaper, !this.state.menuOpen && classes.drawerPaperClose)
                          }}>
@@ -158,7 +158,7 @@ class Header extends Component {
               <ListItemText>Sign Out</ListItemText>
             </ListItem>
           </List>
-        </Drawer>
+        </SwipeableDrawer>
       </React.Fragment>
     )
   }
