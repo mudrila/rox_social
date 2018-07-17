@@ -1,9 +1,10 @@
 import React, { Component, Fragment } from 'react'
+import { withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { withStyles } from '@material-ui/core/styles';
 import Routes from './Routes'
-import Header from '../../../PagesParts/AuthorizedUserPagesParts/Header/Header'
+import Header from '../PagesParts/Header/Header'
 import './styles/main.scss'
 import './styles/adaptive.scss'
 
@@ -37,4 +38,4 @@ class AuthorizedApp extends Component {
   }
 }
 
-export default withStyles(styles)(AuthorizedApp)
+export default withRouter(withStyles(styles)(AuthorizedApp))

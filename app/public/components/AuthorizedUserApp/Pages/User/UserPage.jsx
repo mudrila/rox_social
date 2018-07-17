@@ -16,7 +16,8 @@ export default class UserPage extends Component {
         userUuid: this.props.user.uuid,
         userAvatar: ''
       }
-    }
+    };
+    document.title = 'Profile | Social Rox'
   }
   static propTypes = {
     user: PropTypes.shape({

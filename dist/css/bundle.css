@@ -1,7 +1,54 @@
 @media (min-width: 320px) and (max-width: 800px) {
+  #app .b-user-page {
+    justify-content: center;
+  }
+
+  #app .b-user-page__header {
+    margin-top: 0;
+  }
+
+  #app .b-user-page__b-user-avatar {
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  #app .b-user-page__b-user-avatar__form__b-form-group {
+    display: none;
+  }
+
+  #app .b-user-page__b-user-avatar__form__b-form-group.active {
+    display: block;
+  }
+
+  #app .b-user-page__b-user-data {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #app .b-user-page__b-user-data__form {
+    justify-content: center;
+  }
+
+  #app .b-user-page__b-user-data__form__b-form-group__label {
+    display: none;
+  }
+
+  #app .b-user-page__b-user-data__form__b-form-group__input {
+    width: 100%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 800px) {
   #app .authorized-content {
     padding-right: 10px;
     padding-left: 10px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 800px) {
+  .unauthorized-content {
+    width: 100vw;
   }
 }
 
@@ -49,6 +96,22 @@
   margin-left: 5px;
 }
 
+@media (min-width: 320px) and (max-width: 800px) {
+  #app {
+    display: flex;
+  }
+
+  #app .b-main-container {
+    flex-grow: 1;
+    min-height: 85vh;
+    padding-top: 15vh;
+  }
+
+  #app .b-main-container .b-transition-container {
+    overflow: scroll;
+  }
+}
+
 #app {
   font-family: Roboto, sans-serif;
   flex-grow: 1;
@@ -94,6 +157,17 @@
 .b-main-container .b-transition-container .fade-enter-done {
   opacity: 1;
   transition: all 500ms ease-in;
+}
+
+.unauthorized-content {
+  height: 100vh;
+  flex-grow: 1;
+}
+
+@media (min-width: 320px) and (max-width: 400px) {
+  .b-main-header__slogan {
+    display: none !important;
+  }
 }
 
 .b-user-page {
@@ -182,77 +256,6 @@
   border-radius: 5px;
 }
 
-@media (min-width: 320px) and (max-width: 800px) {
-  #app .b-user-page {
-    justify-content: center;
-  }
-
-  #app .b-user-page__header {
-    margin-top: 0;
-  }
-
-  #app .b-user-page__b-user-avatar {
-    width: 100%;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-
-  #app .b-user-page__b-user-avatar__form__b-form-group {
-    display: none;
-  }
-
-  #app .b-user-page__b-user-avatar__form__b-form-group.active {
-    display: block;
-  }
-
-  #app .b-user-page__b-user-data {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-
-  #app .b-user-page__b-user-data__form {
-    justify-content: center;
-  }
-
-  #app .b-user-page__b-user-data__form__b-form-group__label {
-    display: none;
-  }
-
-  #app .b-user-page__b-user-data__form__b-form-group__input {
-    width: 100%;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 400px) {
-  .b-main-header__slogan {
-    display: none !important;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 800px) {
-  #app {
-    display: flex;
-  }
-
-  #app .b-main-container {
-    flex-grow: 1;
-    min-height: 85vh;
-    padding-top: 15vh;
-  }
-
-  #app .b-main-container .b-transition-container {
-    overflow: scroll;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 800px) {
-  .b-transition-container .b-registration-form {
-    margin: 0 auto;
-    top: 10%;
-    width: 100%;
-  }
-}
-
 .b-main-header {
   display: flex;
   flex-wrap: nowrap;
@@ -270,11 +273,7 @@
   padding-left: 16px;
 }
 
-.b-main-header__link-container.active {
-  border-right: 2px solid #303f9f;
-}
-
-.b-main-header__link-container__link {
+.b-main-header__link {
   width: 100%;
   display: flex;
   position: relative;
@@ -286,9 +285,21 @@
   color: #303f9f;
 }
 
-.b-main-header__link-container__link.active svg,
-.b-main-header__link-container__link.active span {
+.b-main-header__link.active {
+  border-right: 2px solid #303f9f;
+}
+
+.b-main-header__link.active svg,
+.b-main-header__link.active span {
   color: #303f9f;
+}
+
+@media (min-width: 320px) and (max-width: 800px) {
+  .b-transition-container .b-registration-form {
+    margin: 0 auto;
+    top: 10%;
+    width: 100%;
+  }
 }
 
 .b-registration-form {
@@ -388,17 +399,6 @@
 
 .b-login-form__form-group.b-form-control .b-form-control__button {
   width: 100%;
-}
-
-.unauthorized-content {
-  height: 100vh;
-  flex-grow: 1;
-}
-
-@media (min-width: 320px) and (max-width: 800px) {
-  .unauthorized-content {
-    width: 100vw;
-  }
 }
 
 

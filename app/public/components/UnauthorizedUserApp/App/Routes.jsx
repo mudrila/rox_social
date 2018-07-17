@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
-import RegistrationPageContainer from '../../../Pages/UnauthorizedUserPages/Registration/RegistrationPageContainer'
-import LoginPageContainer from '../../../Pages/UnauthorizedUserPages/Login/LoginPageContainer'
+import RegistrationPageContainer from '../Pages/Registration/RegistrationPageContainer'
+import LoginPageContainer from '../Pages/Login/LoginPageContainer'
 class Routes extends Component {
   render () {
     return (

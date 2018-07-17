@@ -94,13 +94,14 @@ class Header extends Component {
     handleSignOut: PropTypes.func
   };
   openMenu = () => {
-    this.setState({ menuOpen: true })
+    if (!this.state.menuOpen) {
+      this.setState({ menuOpen: true })
+    }
   };
   closeMenu = () => {
-    this.setState({ menuOpen: false })
-  };
-  handleSignOut = () => {
-    this.props.handleSignOut()
+    if (this.state.menuOpen) {
+      this.setState({ menuOpen: false })
+    }
   };
   render () {
     const { classes } = this.props;
@@ -134,39 +135,39 @@ class Header extends Component {
           </div>
           <Divider />
           <List>
-            <ListItem button className={classNames({'active': this.props.match.path.match('/')}, 'b-main-header__link-container')}>
-              <NavLink className={'b-main-header__link-container__link'} activeClassName={'active'} to={'/'} onClick={this.closeMenu}>
-                <ListItemIcon>
-                  <FontAwesomeIcon icon={faUser}/>
-                </ListItemIcon>
-                <ListItemText>Profile</ListItemText>
-              </NavLink>
-            </ListItem>
-            <ListItem button className={classNames({'active': this.props.match.path.match('/friends')}, 'b-main-header__link-container')}>
-              <NavLink className={'b-main-header__link-container__link'} activeClassName={'active'} to={'/friends'} onClick={this.closeMenu}>
-                <ListItemIcon>
-                  <FontAwesomeIcon icon={faUserFriends}/>
-                </ListItemIcon>
-                <ListItemText>Friends</ListItemText>
-              </NavLink>
-            </ListItem>
-            <ListItem button className={classNames({'active': this.props.match.path.match('/messages')}, 'b-main-header__link-container')}>
-              <NavLink className={'b-main-header__link-container__link'} activeClassName={'active'} to={'/messages'} onClick={this.closeMenu}>
-                <ListItemIcon>
-                  <FontAwesomeIcon icon={faComments}/>
-                </ListItemIcon>
-                <ListItemText>Messages</ListItemText>
-              </NavLink>
-            </ListItem>
-            <ListItem button className={classNames({'active': this.props.match.path.match('/settings')}, 'b-main-header__link-container')}>
-              <NavLink className={'b-main-header__link-container__link'} activeClassName={'active'} to={'/settings'} onClick={this.closeMenu}>
-                <ListItemIcon>
-                  <FontAwesomeIcon icon={faUserCog}/>
-                </ListItemIcon>
-                <ListItemText>Settings</ListItemText>
-              </NavLink>
-            </ListItem>
-            <ListItem button onClick={this.handleSignOut}>
+            <NavLink className={'b-main-header__link'} activeClassName={'active'} to={'/'} onClick={this.closeMenu} exact={true}>
+              <ListItem button>
+                  <ListItemIcon>
+                    <FontAwesomeIcon icon={faUser}/>
+                  </ListItemIcon>
+                  <ListItemText>Profile</ListItemText>
+              </ListItem>
+            </NavLink>
+            <NavLink className={'b-main-header__link'} activeClassName={'active'} to={'/friends'} onClick={this.closeMenu}>
+              <ListItem button>
+                  <ListItemIcon>
+                    <FontAwesomeIcon icon={faUserFriends}/>
+                  </ListItemIcon>
+                  <ListItemText>Friends</ListItemText>
+              </ListItem>
+            </NavLink>
+            <NavLink className={'b-main-header__link'} activeClassName={'active'} to={'/messages'} onClick={this.closeMenu}>
+              <ListItem button>
+                  <ListItemIcon>
+                    <FontAwesomeIcon icon={faComments}/>
+                  </ListItemIcon>
+                  <ListItemText>Messages</ListItemText>
+              </ListItem>
+            </NavLink>
+            <NavLink className={'b-main-header__link'} activeClassName={'active'} to={'/settings'} onClick={this.closeMenu}>
+              <ListItem button>
+                  <ListItemIcon>
+                    <FontAwesomeIcon icon={faUserCog}/>
+                  </ListItemIcon>
+                  <ListItemText>Settings</ListItemText>
+              </ListItem>
+            </NavLink>
+            <ListItem button onClick={this.props.handleSignOut}>
               <ListItemIcon>
                 <FontAwesomeIcon icon={faSignOutAlt}/>
               </ListItemIcon>

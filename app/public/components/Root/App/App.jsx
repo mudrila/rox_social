@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import AuthorizedUserApp from './AuthorizedUserApp/App'
-import UnauthorizedUserApp from './UnauthorizedUserApp/App'
+import AuthorizedUserApp from '../../AuthorizedUserApp/App/App'
+import UnauthorizedUserApp from '../../UnauthorizedUserApp/App/App'
 import './styles/main.scss'
 import './styles/adaptive.scss'
 

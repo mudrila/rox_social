@@ -1,6 +1,6 @@
 import { takeEvery, put } from 'redux-saga/effects'
 import { REGISTER_USER_REQUEST } from './actionTypes'
-import { loginRequest } from '../../../AuthorizedUserPages/User/redux/actions'
+import { loginRequest } from '../../../../AuthorizedUserApp/Pages/User/redux/actions'
 import * as APIService from './apiService'
 
 const registerUserWorker = function * (action) {
