@@ -9,7 +9,7 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from "@material-ui/core/Typography"
 import Avatar from '@material-ui/core/Avatar'
 import IconButton from '@material-ui/core/IconButton'
-import Drawer from '@material-ui/core/Drawer'
+import Drawer from '@material-ui/core/SwipeableDrawer'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
@@ -104,7 +104,10 @@ class Header extends Component {
   };
   render () {
     const { classes } = this.props;
-    console.log(this.props);
+    let drawerVariant = 'permanent';
+    if (this.state.menuOpen) {
+      drawerVariant = 'temporary'
+    }
     return (
       <React.Fragment>
         <AppBar position={'absolute'} className={classNames('b-main-header', classes.appBar, this.state.menuOpen && classes.appBarShift)}>
@@ -118,10 +121,11 @@ class Header extends Component {
           </Toolbar>
         </AppBar>
         <Drawer open={this.state.menuOpen}
-                         variant={'permanent'} anchor={'left'}
-                         classes={{
-                           paper: classNames(classes.drawerPaper, !this.state.menuOpen && classes.drawerPaperClose)
-                         }}>
+                onOpen={this.openMenu} onClose={this.closeMenu}
+                variant={drawerVariant} anchor={'left'}
+                classes={{
+                  paper: classNames(classes.drawerPaper, !this.state.menuOpen && classes.drawerPaperClose)
+                }}>
           <div className={classes.toolbar}>
             <Typography color={'primary'} variant={'title'} className='b-main-header__menu-title'>Menu</Typography>
             <IconButton onClick={this.closeMenu}>
@@ -131,7 +135,7 @@ class Header extends Component {
           <Divider />
           <List>
             <ListItem button className={classNames({'active': this.props.match.path.match('/')}, 'b-main-header__link-container')}>
-              <NavLink className={'b-main-header__link-container__link'} activeClassName={'active'} to={'/'}>
+              <NavLink className={'b-main-header__link-container__link'} activeClassName={'active'} to={'/'} onClick={this.closeMenu}>
                 <ListItemIcon>
                   <FontAwesomeIcon icon={faUser}/>
                 </ListItemIcon>
@@ -139,7 +143,7 @@ class Header extends Component {
               </NavLink>
             </ListItem>
             <ListItem button className={classNames({'active': this.props.match.path.match('/friends')}, 'b-main-header__link-container')}>
-              <NavLink className={'b-main-header__link-container__link'} activeClassName={'active'} to={'/friends'}>
+              <NavLink className={'b-main-header__link-container__link'} activeClassName={'active'} to={'/friends'} onClick={this.closeMenu}>
                 <ListItemIcon>
                   <FontAwesomeIcon icon={faUserFriends}/>
                 </ListItemIcon>
@@ -147,7 +151,7 @@ class Header extends Component {
               </NavLink>
             </ListItem>
             <ListItem button className={classNames({'active': this.props.match.path.match('/messages')}, 'b-main-header__link-container')}>
-              <NavLink className={'b-main-header__link-container__link'} activeClassName={'active'} to={'/messages'}>
+              <NavLink className={'b-main-header__link-container__link'} activeClassName={'active'} to={'/messages'} onClick={this.closeMenu}>
                 <ListItemIcon>
                   <FontAwesomeIcon icon={faComments}/>
                 </ListItemIcon>
@@ -155,7 +159,7 @@ class Header extends Component {
               </NavLink>
             </ListItem>
             <ListItem button className={classNames({'active': this.props.match.path.match('/settings')}, 'b-main-header__link-container')}>
-              <NavLink className={'b-main-header__link-container__link'} activeClassName={'active'} to={'/settings'}>
+              <NavLink className={'b-main-header__link-container__link'} activeClassName={'active'} to={'/settings'} onClick={this.closeMenu}>
                 <ListItemIcon>
                   <FontAwesomeIcon icon={faUserCog}/>
                 </ListItemIcon>

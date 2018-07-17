@@ -9,6 +9,7 @@ import './styles/adaptive.scss'
 
 const styles = {
   content: {
+    minHeight: '100vh',
     flexGrow: 1,
     padding: '10vh 5% 0 1%',
   }
