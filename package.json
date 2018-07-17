@@ -10,6 +10,8 @@
     "production": "npm run build:public:prod && npm run start-server",
     "build:public:dev": "webpack --config ./config/webpack/webpack.dev.js",
     "build:public:prod": "webpack --config ./config/webpack/webpack.prod.js",
+    "deploy:prepare": "npm run build:public:prod && git add . && git commit -m 'Prepare to deploy, see command in package.json'",
+    "deploy:execute": "npm run deploy:prepare && git status && git push",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
