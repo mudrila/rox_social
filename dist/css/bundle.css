@@ -260,8 +260,6 @@
   .b-transition-container .b-registration-form {
     margin: 0 auto;
     top: 10%;
-    min-height: 50vh;
-    max-height: 70vh;
     width: 100%;
   }
 }
@@ -284,7 +282,8 @@
   transition: all 500ms linear;
   flex-direction: column;
   flex: 1 1 auto;
-  max-height: 50vh;
+  min-height: 400px;
+  max-height: 450px;
 }
 
 .b-registration-form__header {
@@ -314,8 +313,6 @@
   .b-transition-container .b-login-form {
     margin: 0 auto;
     width: 280px;
-    min-height: 50vh;
-    max-height: 55vh;
     padding: 10px;
     top: 15%;
   }
@@ -338,8 +335,8 @@
   right: 0;
   top: 25%;
   bottom: 0;
-  min-height: 40%;
-  max-height: 40vh;
+  min-height: 300px;
+  max-height: 350px;
   display: flex;
   align-self: center;
   background-color: white;

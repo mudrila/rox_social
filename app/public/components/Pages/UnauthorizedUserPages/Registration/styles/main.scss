@@ -17,7 +17,8 @@
   transition: all 500ms linear;
   flex-direction: column;
   flex: 1 1 auto;
-  max-height: 50vh;
+  min-height: 400px;
+  max-height: 450px;
   &__header {
     display: flex;
     width: 100%;
