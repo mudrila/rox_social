@@ -7,7 +7,7 @@ import IconButton from '@material-ui/core/IconButton'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from "@fortawesome/free-solid-svg-icons"
 import './styles/main.scss'
-
+import './styles/adaptive.scss'
 class FriendsPage extends Component {
   constructor (props) {
     super(props);

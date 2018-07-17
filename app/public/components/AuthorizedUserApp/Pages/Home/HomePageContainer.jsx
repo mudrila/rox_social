@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { immutableComponentToJS } from '../../../../utils/immutableComponentToJS'
 import * as userActions from './redux/actions'
-import UserPage from './UserPage'
+import HomePage from './HomePage'
 
 const mapStateToProps = (state) => {
   return {
@@ -15,4 +15,4 @@ const mapDispatchToProps = (dispatch) => {
     userActions: bindActionCreators(userActions, dispatch)
   }
 };
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(immutableComponentToJS(UserPage)))
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(immutableComponentToJS(HomePage)))

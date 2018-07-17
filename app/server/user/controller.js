@@ -233,11 +233,20 @@ function searchUsers(request, response) {
     })
   })
 }
+function subscribe(request, response) {
+  console.log(request.user);
+  response.json({
+    success: true,
+    messageType: 'success',
+    messageBody: 'You successfully subscribed'
+  })
+}
 module.exports = {
   signUp: signUp,
   login: login,
   getDetails: getDetails,
   uploadAvatar: uploadAvatar,
   getAvatar: getAvatar,
-  searchUsers: searchUsers
+  searchUsers: searchUsers,
+  subscribe: subscribe
 };

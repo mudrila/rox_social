@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { loginRequest } from '../../../AuthorizedUserApp/Pages/User/redux/actions'
+import { loginRequest } from '../../../AuthorizedUserApp/Pages/Home/redux/actions'
 import LoginPage from './LoginPage'
 
 const mapDispatchToProps = (dispatch) => {

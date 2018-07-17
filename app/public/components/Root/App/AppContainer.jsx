@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { withRouter } from 'react-router-dom'
 import { immutableComponentToJS } from '../../../utils/immutableComponentToJS'
-import * as userActions from '../../AuthorizedUserApp/Pages/User/redux/actions'
+import * as userActions from '../../AuthorizedUserApp/Pages/Home/redux/actions'
 import App from './App'
 
 const mapStateToProps = (state) => {

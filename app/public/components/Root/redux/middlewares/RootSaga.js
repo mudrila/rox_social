@@ -1,5 +1,5 @@
 import { all } from 'redux-saga/effects'
-import { watchUserSaga } from '../../../AuthorizedUserApp/Pages/User/redux/saga'
+import { watchUserSaga } from '../../../AuthorizedUserApp/Pages/Home/redux/saga'
 import { watchRegistrationSaga } from '../../../UnauthorizedUserApp/Pages/Registration/redux/saga'
 import { watchFriendsPageSaga } from '../../../AuthorizedUserApp/Pages/Friends/redux/saga'
 /**

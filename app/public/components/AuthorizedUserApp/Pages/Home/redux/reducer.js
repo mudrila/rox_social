@@ -1,4 +1,4 @@
-import { Map } from 'immutable'
+import { Map, Set } from 'immutable'
 import { LOGIN, LOGOUT } from './actionTypes'
 
 const UserReducer = (state = Map({}), action) => {
@@ -9,7 +9,7 @@ const UserReducer = (state = Map({}), action) => {
         .set('uuid', action.user.uuid)
         .set('accessToken', action.user.token)
         .set('email', action.user.email)
-        .set('isAuthenticated', true);
+        .set('isAuthenticated', true).set('friends', Set([]));
       return state;
     case LOGOUT:
       return Map({});
