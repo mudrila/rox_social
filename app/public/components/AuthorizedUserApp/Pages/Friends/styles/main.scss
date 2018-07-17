@@ -36,6 +36,13 @@
       border-bottom: 2px solid $light-gray;
       padding-bottom: 5px;
     }
+    .users-list {
+      width: 100%;
+      &__user-link {
+        text-decoration: none;
+        display: flex;
+      }
+    }
     .no-data-found {
       border-bottom: 2px solid $light-gray;
       display: flex;

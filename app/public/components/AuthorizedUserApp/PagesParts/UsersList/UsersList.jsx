@@ -13,10 +13,10 @@ import { faUserPlus } from '@fortawesome/free-solid-svg-icons'
 const UsersList = (props) => {
   if (props.data.length > 0) {
     return (
-      <List>
+      <List className='users-list'>
         {props.data.map(user => {
           return (
-            <NavLink to={`/users/${user.uuid}`}>
+            <NavLink className='users-list__user-link' key={user.uuid} to={`/users/${user.uuid}`}>
               <ListItem divider button>
                 <ListItemAvatar>
                   <Avatar src={`${APIUrl}user/${user.uuid}/avatar/`}/>

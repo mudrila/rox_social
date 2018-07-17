@@ -29,7 +29,8 @@ const styles = theme => ({
   avatar: {
     width: 50,
     height: 50,
-    marginLeft: 10
+    marginLeft: 12,
+    marginRight: 12
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,

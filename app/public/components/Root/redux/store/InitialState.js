@@ -1,11 +1,12 @@
-import {Map, List} from 'immutable'
+import {Map, Set} from 'immutable'
 const InitialState = Map({
   user: Map({
     name: '',
     uuid: '',
     accessToken: '',
     isAuthenticated: false,
-    friends: List([])
-  })
+    friends: Set([])
+  }),
+  usersSearchResult: Set([])
 });
 export default InitialState

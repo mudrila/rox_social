@@ -13,7 +13,6 @@ class FriendsPage extends Component {
     super(props);
     this.state = {
       search: '',
-      searchResult: [],
       renderSearchResult: false
     };
     document.title = 'Peoples | Social Rox'
@@ -22,13 +21,17 @@ class FriendsPage extends Component {
     user: PropTypes.shape({
       uuid: PropTypes.string,
       friends: PropTypes.array
+    }),
+    searchResult: PropTypes.array,
+    friendsPageActions: PropTypes.shape({
+      searchRequest: PropTypes.func
     })
   };
   handleInputChange = (event) => {
     this.setState({ [event.target.name]: event.target.value })
   };
   handleSearch = () => {
-    console.log('Search!');
+    this.props.friendsPageActions.searchRequest(this.state.search);
     if (!this.state.renderSearchResult) {
       this.setState({renderSearchResult: true})
     }
@@ -37,7 +40,7 @@ class FriendsPage extends Component {
     return (
       <section className='b-friends-page__b-search-results'>
         <h2 className='b-friends-page__b-search-results__header'>Search results:</h2>
-        <UsersList type={'search'} data={this.state.searchResult}/>
+        <UsersList type={'search'} data={this.props.searchResult}/>
       </section>
     )
   };

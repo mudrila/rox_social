@@ -9,12 +9,12 @@ const UserReducer = (state = Map({}), action) => {
         .set('uuid', action.user.uuid)
         .set('accessToken', action.user.token)
         .set('email', action.user.email)
-        .set('isAuthenticated', true)
-      return state
+        .set('isAuthenticated', true);
+      return state;
     case LOGOUT:
-      return Map({})
+      return Map({});
     default:
       return state
   }
-}
+};
 export default UserReducer

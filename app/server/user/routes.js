@@ -10,5 +10,6 @@ userRouter.route('/registration').post(UserController.signUp);
 userRouter.route('/login').post(UserController.login);
 userRouter.route('/:userID/avatar').post(verifyToken, avatarUpload.single('avatar'), UserController.uploadAvatar);
 userRouter.route('/:userID/avatar').get(UserController.getAvatar);
+userRouter.route('/search').get(verifyToken, UserController.searchUsers);
 
 module.exports =  userRouter;

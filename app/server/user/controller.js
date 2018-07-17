@@ -208,10 +208,36 @@ function getAvatar(request, response) {
     }
   });
 }
+function searchUsers(request, response) {
+  const data = [];
+  User.find({
+    name: { "$regex": request.query.name, "$options": "i"}
+  }).lean().exec(function (err, users) {
+    if (err) {
+      response.status(500).json({success: false, messageType: 'error', messageBody: 'Unknown error while search users'})
+    }
+    users.forEach(function (item) {
+      let user = {
+        email: item.email,
+        name: item.name,
+        uuid: item.uuid,
+        creationTime: item.creationTime
+      };
+      data.push(user)
+    });
+    response.json({
+      success:true,
+      messageType: 'success',
+      messageBody: 'Get your staff, dude :)',
+      items: data
+    })
+  })
+}
 module.exports = {
   signUp: signUp,
   login: login,
   getDetails: getDetails,
   uploadAvatar: uploadAvatar,
-  getAvatar: getAvatar
+  getAvatar: getAvatar,
+  searchUsers: searchUsers
 };

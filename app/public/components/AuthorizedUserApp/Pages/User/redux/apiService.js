@@ -5,7 +5,7 @@ export const loginRequest = function (userCredentials) {
     email: userCredentials.userEmail,
     password: userCredentials.userPassword
   })
-}
+};
 export const uploadAvatar = function (userID, userAvatar) {
   return baseFileUploadRequest(`user/${userID}/avatar/`, userAvatar)
-}
+};

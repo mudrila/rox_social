@@ -295,6 +295,17 @@
   padding-bottom: 5px;
 }
 
+.b-friends-page__b-search-results .users-list,
+.b-friends-page__b-friends .users-list {
+  width: 100%;
+}
+
+.b-friends-page__b-search-results .users-list__user-link,
+.b-friends-page__b-friends .users-list__user-link {
+  text-decoration: none;
+  display: flex;
+}
+
 .b-friends-page__b-search-results .no-data-found,
 .b-friends-page__b-friends .no-data-found {
   border-bottom: 2px solid #e8e7e8;
