@@ -13,5 +13,5 @@ userRouter.route('/:userID/details').get(verifyToken, UserController.getDetails)
 userRouter.route('/:userID/avatar').post(verifyToken, avatarUpload.single('avatar'), UserController.uploadAvatar);
 userRouter.route('/:userID/avatar').get(UserController.getAvatar);
 userRouter.route('/search').get(verifyToken, UserController.searchUsers);
-userRouter.route('/subscribe/:userID').post(verifyToken, UserController.subscribe);
+userRouter.route('/:userID/subscribe').post(verifyToken, UserController.subscribe);
 module.exports =  userRouter;

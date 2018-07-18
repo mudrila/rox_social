@@ -234,20 +234,35 @@ function searchUsers(request, response) {
 }
 function subscribe(request, response) {
   // request.params.userID - to whom  to subscribe, request.user - subscriber
+  const errorResponseJSON = baseResponse.baseErrorResponse('Unknown error while subscribing');
   User.findOne({ uuid: request.params.userID}).exec(function (err, user) {
     if (err) {
-      response.status(500).json(baseResponse.baseErrorResponse('Unknown error while subscribing'))
+      response.status(500).json(errorResponseJSON)
     }
     if (!user) {
       response.json(baseResponse.baseWarningResponse('Such user does not exist!'))
     }
-    console.log(request.user)
+    User.findOne({ _id: request.user.id }).exec(function (err, currentUser) {
+      if (err || !currentUser) {
+        response.status(500).json(errorResponseJSON)
+      }
+      user.subscribers.push(currentUser.toJSON());
+      user.save(function (err, updatedUser) {
+        if (err) {
+          response.status(500).json(errorResponseJSON)
+        } else {
+          currentUser.subscriptions.push(updatedUser.toJSON());
+          currentUser.save(function (err) {
+            if (err) {
+              response.status(500).json(errorResponseJSON)
+            } else {
+              response.json(baseResponse.baseSuccessResponse('You successfully subscribed', currentUser))
+            }
+          })
+        }
+      });
+    });
   });
-  response.json({
-    success: true,
-    messageType: 'success',
-    messageBody: 'You successfully subscribed'
-  })
 }
 module.exports = {
   signUp: signUp,
