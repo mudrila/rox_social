@@ -1,5 +1,7 @@
-export const LOGIN_REQUEST = 'LOGIN_REQUEST'
-export const LOGIN = 'LOGIN'
-export const LOGOUT_REQUEST = 'LOGOUT_REQUEST'
-export const LOGOUT = 'LOGOUT'
-export const UPLOAD_AVATAR = 'UPLOAD_AVATAR'
+export const LOGIN_REQUEST = 'LOGIN_REQUEST';
+export const LOGIN = 'LOGIN';
+export const LOGOUT_REQUEST = 'LOGOUT_REQUEST';
+export const LOGOUT = 'LOGOUT';
+export const UPLOAD_AVATAR = 'UPLOAD_AVATAR';
+export const GET_CURRENT_USER_DATA_REQUEST = 'GET_CURRENT_USER_DATA_REQUEST';
+export const GET_CURRENT_USER_DATA = 'GET_CURRENT_USER_DATA';

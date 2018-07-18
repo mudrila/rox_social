@@ -1,6 +1,6 @@
 @media (min-width:320px) and (max-width:800px) {
   #app {
-    display: flex;
+    min-width: 400px;
     .b-main-container {
       flex-grow: 1;
       min-height: 85vh;

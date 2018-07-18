@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const config = require('../../../config/index');
 const User = require('./model');
+const baseResponse = require('../base_response/index')
 
 function signUp (request, response) {
   let requestData = request.body;
@@ -72,6 +73,9 @@ function login(request, response) {
               uuid: user.uuid,
               creationTime: user.creationTime,
               email: user.email,
+              friends: user.friends,
+              subscribers: user.subscribers,
+              subscriptions: user.subscriptions,
               token: jwt.sign({user:userJSON}, config.jwtSecret)
             }
           })
@@ -103,17 +107,9 @@ function getDetails(request, response) {
   let userID = request.params.userID;
   User.findOne( {uuid: userID} ).exec(function (err, user) {
     if (err) {
-      response.status(500).json({
-        success: false,
-        messageType:'error',
-        messageBody: 'Unknown error while getting user details'
-      })
+      response.status(500).json(baseResponse.baseErrorResponse('Unknown error while getting user data'))
     } else if(!user) {
-      response.json({
-        success:false,
-        messageType:'warning',
-        messageBody: 'Such user does not exist!'
-      })
+      response.json(baseResponse.baseWarningResponse('Such user does not exist!'))
     } else {
       response.json({
         success:true,
@@ -123,7 +119,10 @@ function getDetails(request, response) {
           name: user.name,
           email: user.email,
           creationTime: user.creationTime,
-          uuid: user.uuid
+          uuid: user.uuid,
+          friends: user.friends,
+          subscriptions: user.subscriptions,
+          subscribers: user.subscribers
         }
       })
     }
@@ -234,7 +233,16 @@ function searchUsers(request, response) {
   })
 }
 function subscribe(request, response) {
-  console.log(request.user);
+  // request.params.userID - to whom  to subscribe, request.user - subscriber
+  User.findOne({ uuid: request.params.userID}).exec(function (err, user) {
+    if (err) {
+      response.status(500).json(baseResponse.baseErrorResponse('Unknown error while subscribing'))
+    }
+    if (!user) {
+      response.json(baseResponse.baseWarningResponse('Such user does not exist!'))
+    }
+    console.log(request.user)
+  });
   response.json({
     success: true,
     messageType: 'success',

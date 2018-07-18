@@ -5,7 +5,8 @@ const InitialState = Map({
     uuid: '',
     accessToken: '',
     isAuthenticated: false,
-    friends: Set([])
+    friends: Set([]),
+    subscribers: Set([])
   }),
   usersSearchResult: Set([])
 });

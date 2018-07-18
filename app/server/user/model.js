@@ -30,7 +30,8 @@ let UserSchema = new mongoose.Schema({
     trim: true
   },
   friends: [ this ],
-  subscribers: [ this ]
+  subscribers: [ this ],
+  subscriptions: [ this ]
 });
 let User = mongoose.model('User', UserSchema);
 module.exports = User;
