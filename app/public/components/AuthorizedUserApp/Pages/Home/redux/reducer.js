@@ -11,7 +11,8 @@ const UserReducer = (state = Map({}), action) => {
         .set('email', action.user.email)
         .set('isAuthenticated', true)
         .set('friends', Set(action.user.friends))
-        .set('subscribers', Set(action.user.subscribers));
+        .set('subscribers', Set(action.user.subscribers))
+        .set('subscriptions', Set(action.user.subscriptions));
       return state;
     case GET_CURRENT_USER_DATA:
       state = state
@@ -20,7 +21,8 @@ const UserReducer = (state = Map({}), action) => {
         .set('email', action.user.email)
         .set('isAuthenticated', true)
         .set('friends', Set(action.user.friends))
-        .set('subscribers', Set(action.user.subscribers));
+        .set('subscribers', Set(action.user.subscribers))
+        .set('subscriptions', Set(action.user.subscriptions));
       return state;
     case LOGOUT:
       return Map({});

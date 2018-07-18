@@ -11,25 +11,21 @@ import CardActions from '@material-ui/core/CardActions'
 import TextField from '@material-ui/core/TextField'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import IconButton from '@material-ui/core/IconButton'
-import Typography from '@material-ui/core/Typography'
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemText from '@material-ui/core/ListItemText'
-import ListItemAvatar from '@material-ui/core/ListItemAvatar'
-import Avatar from '@material-ui/core/Avatar'
+import Grid from '@material-ui/core/Grid'
 import Tooltip from '@material-ui/core/Tooltip'
+import UsersList from '../../PagesParts/UsersList/UsersList'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserCircle, faUpload, faAt, faFingerprint, faUserEdit , faUserCheck, faCheck} from '@fortawesome/free-solid-svg-icons'
+import { faUserCircle, faUpload, faAt, faFingerprint, faUserEdit , faUserCheck} from '@fortawesome/free-solid-svg-icons'
 import './styles/main.scss'
 import './styles/adaptive.scss'
 
 const styles = theme => ({
-  userCard: {
-    position: 'relative',
-    width: 400
+  gridContainer: {
+    alignItems: 'flex-start',
+    alignContent: 'flex-start'
   },
   userPhoto: {
-    paddingTop: '67.25%',
+    paddingTop: '57.25%',
     height: 0,
     position: 'relative'
   },
@@ -55,6 +51,17 @@ const styles = theme => ({
   },
   icon: {
     color: theme.palette.primary.main
+  },
+  usersListHeader: {
+    borderBottom: '1px solid rgba(0, 0, 0, 0.12)'
+  },
+  usersListContent: {
+    paddingTop: 0,
+    paddingLeft: 0,
+    paddingRight: 0
+  },
+  usersListGridItem: {
+    margin: '16px auto'
   }
 });
 class HomePage extends Component {
@@ -89,15 +96,6 @@ class HomePage extends Component {
       uploadAvatar: PropTypes.func
     })
   };
-  handleAvatarUpload = (event, file) => {
-    event.preventDefault();
-    let fileFormData = new FormData();
-    fileFormData.append('avatar', file);
-    if (this.state.userDataFormValues.userAvatar) {
-      this.props.userActions.uploadAvatar(this.props.user.uuid, fileFormData);
-      this.forceUpdate()
-    }
-  };
   toggleUserDataForm = () => {
     if (this.state.formDisabled) {
       // Enable form
@@ -108,15 +106,20 @@ class HomePage extends Component {
       })
     } else {
       // Disable form and possibly - submit
+      if (this.state.userDataFormValues.userAvatar) {
+        let file = document.getElementById('userAvatar').files[0];
+        if (file) {
+          let fileFormData = new FormData();
+          fileFormData.append('avatar', file);
+          this.props.userActions.uploadAvatar(this.props.user.uuid, fileFormData);
+        }
+      }
       this.setState({
         formDisabled: true,
         headerIconTooltip: 'Edit',
         userDataCardHeaderIcon: faUserEdit
       })
     }
-  };
-  handleUserDataFormSubmit = (event) => {
-    event.preventDefault()
   };
   handleUserDataInputChange = (event) => {
     if (event.target.name === 'userAvatar') {
@@ -141,59 +144,88 @@ class HomePage extends Component {
     const { user, classes } = this.props;
     return (
       <article className='b-user-page'>
-        <Card className={classes.userCard}>
-          <CardHeader title={user.name}
-                      action={
-                        <Tooltip title={this.state.headerIconTooltip}>
-                          <IconButton onClick={this.toggleUserDataForm}>
-                            <FontAwesomeIcon className={classes.icon} icon={this.state.userDataCardHeaderIcon}/>
-                          </IconButton>
-                        </Tooltip>
-                      }>
-          </CardHeader>
-          <CardMedia image={`${APIUrl}user/${user.uuid}/avatar/`} title={user.name} className={classNames(classes.userPhoto)}/>
-          <CardActions className={classNames(classes.avatarActions, {[classes.avatarActionsActive]: !formDisabled })}>
-            <Tooltip title={'Upload avatar'}>
-              <IconButton>
-                <label htmlFor={'userAvatar'} className={classes.uploadAvatarLabel}>
-                  <FontAwesomeIcon icon={faUpload} className={classes.icon}/>
-                  <input id={'userAvatar'} onChange={this.handleUserDataInputChange} type={'file'}
-                         className={classNames(classes.fileInput)} value={userDataFormValues.userAvatar}
-                         disabled={formDisabled}/>
-                </label>
-              </IconButton>
-            </Tooltip>
-          </CardActions>
-          <CardContent>
-            <TextField name={'userName'} label={'Name'}
-                       value={userDataFormValues.userName}  onChange={this.handleUserDataInputChange}
-                       disabled={formDisabled} className={classes.userInput}
-                       InputProps={{
-                        startAdornment: (
-                          <InputAdornment position={'start'}> <FontAwesomeIcon className={classes.icon} icon={faUserCircle}/> </InputAdornment>
-                        )
-                       }}
-            />
-            <TextField name={'userEmail'} label={'Email'}
-                       value={userDataFormValues.userEmail}  onChange={this.handleUserDataInputChange}
-                       disabled={formDisabled} className={classes.userInput}
-                       InputProps={{
-                         startAdornment: (
-                           <InputAdornment position={'start'}> <FontAwesomeIcon className={classes.icon} icon={faAt}/> </InputAdornment>
-                         )
-                       }}
-            />
-            <TextField name={'userUuid'} label={'ID'}
-                       value={userDataFormValues.userUuid} onChange={this.handleUserDataInputChange}
-                       disabled={formDisabled} className={classes.userInput}
-                       InputProps={{
-                         startAdornment: (
-                           <InputAdornment position={'start'}> <FontAwesomeIcon className={classes.icon} icon={faFingerprint}/> </InputAdornment>
-                         )
-                       }}
-            />
-          </CardContent>
-        </Card>
+        <Grid container spacing={16} className={classes.gridContainer}>
+          <Grid item xs={3}>
+            <Card>
+              <CardHeader title={user.name}
+                          action={
+                            <Tooltip title={this.state.headerIconTooltip}>
+                              <IconButton onClick={this.toggleUserDataForm}>
+                                <FontAwesomeIcon className={classes.icon} icon={this.state.userDataCardHeaderIcon}/>
+                              </IconButton>
+                            </Tooltip>
+                          }>
+              </CardHeader>
+              <CardMedia image={`${APIUrl}user/${user.uuid}/avatar/`} title={user.name} className={classNames(classes.userPhoto)}/>
+              <CardActions className={classNames(classes.avatarActions, {[classes.avatarActionsActive]: !formDisabled })}>
+                <Tooltip title={'Upload avatar'}>
+                  <IconButton>
+                    <label htmlFor={'userAvatar'} className={classes.uploadAvatarLabel}>
+                      <FontAwesomeIcon icon={faUpload} className={classes.icon}/>
+                      <input id={'userAvatar'} onChange={this.handleUserDataInputChange} type={'file'}
+                             className={classNames(classes.fileInput)} disabled={formDisabled} name={'userAvatar'}/>
+                    </label>
+                  </IconButton>
+                </Tooltip>
+              </CardActions>
+              <CardContent>
+                <TextField name={'userName'} label={'Name'}
+                           value={userDataFormValues.userName}  onChange={this.handleUserDataInputChange}
+                           disabled={formDisabled} className={classes.userInput}
+                           InputProps={{
+                             startAdornment: (
+                               <InputAdornment position={'start'}> <FontAwesomeIcon className={classes.icon} icon={faUserCircle}/> </InputAdornment>
+                             )
+                           }}
+                />
+                <TextField name={'userEmail'} label={'Email'}
+                           value={userDataFormValues.userEmail}  onChange={this.handleUserDataInputChange}
+                           disabled={formDisabled} className={classes.userInput}
+                           InputProps={{
+                             startAdornment: (
+                               <InputAdornment position={'start'}> <FontAwesomeIcon className={classes.icon} icon={faAt}/> </InputAdornment>
+                             )
+                           }}
+                />
+                <TextField name={'userUuid'} label={'ID'}
+                           value={userDataFormValues.userUuid} onChange={this.handleUserDataInputChange}
+                           disabled={formDisabled} className={classes.userInput}
+                           InputProps={{
+                             startAdornment: (
+                               <InputAdornment position={'start'}> <FontAwesomeIcon className={classes.icon} icon={faFingerprint}/> </InputAdornment>
+                             )
+                           }}
+                />
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid container item xs={8}>
+            <Grid item xs={12}>
+              <Card>
+                <CardHeader title={'Friends'} className={classes.usersListHeader}/>
+                <CardContent className={classes.usersListContent}>
+                  <UsersList data={user.friends} type={'friends'}/>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={5} className={classes.usersListGridItem}>
+              <Card>
+                <CardHeader title={'Subscribers'} className={classes.usersListHeader}/>
+                <CardContent className={classes.usersListContent}>
+                  <UsersList data={user.subscribers} type={'subscribers'}/>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={5} className={classes.usersListGridItem}>
+              <Card>
+                <CardHeader title={'Subscriptions'} className={classes.usersListHeader}/>
+                <CardContent className={classes.usersListContent}>
+                  <UsersList data={user.subscriptions} type={'subscriptions'}/>
+                </CardContent>
+              </Card>
+            </Grid>
+          </Grid>
+        </Grid>
       </article>
     )
   }
