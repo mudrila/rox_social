@@ -145,7 +145,7 @@ class HomePage extends Component {
     return (
       <article className='b-user-page'>
         <Grid container spacing={16} className={classes.gridContainer}>
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={12} md={6} lg={3} xl={3}>
             <Card>
               <CardHeader title={user.name}
                           action={
@@ -199,7 +199,7 @@ class HomePage extends Component {
               </CardContent>
             </Card>
           </Grid>
-          <Grid container item xs={8}>
+          <Grid container item xs={12} sm={12} md={6} lg={8} xl={8}>
             <Grid item xs={12}>
               <Card>
                 <CardHeader title={'Friends'} className={classes.usersListHeader}/>
@@ -208,7 +208,7 @@ class HomePage extends Component {
                 </CardContent>
               </Card>
             </Grid>
-            <Grid item xs={5} className={classes.usersListGridItem}>
+            <Grid item xs={12} sm={12} md={5} lg={5} xl={5} className={classes.usersListGridItem}>
               <Card>
                 <CardHeader title={'Subscribers'} className={classes.usersListHeader}/>
                 <CardContent className={classes.usersListContent}>
@@ -216,7 +216,7 @@ class HomePage extends Component {
                 </CardContent>
               </Card>
             </Grid>
-            <Grid item xs={5} className={classes.usersListGridItem}>
+            <Grid item xs={12} sm={12} md={5} lg={5} xl={5} className={classes.usersListGridItem}>
               <Card>
                 <CardHeader title={'Subscriptions'} className={classes.usersListHeader}/>
                 <CardContent className={classes.usersListContent}>
