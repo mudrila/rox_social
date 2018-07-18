@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" id="custom-viewport">
     <title>Social Rox</title>
 
     <!-- Favicons -->
@@ -31,5 +31,14 @@
 </head>
 <body>
     <div id="app"></div>
+<script>
+    // Custom viewport for mobile devices
+  window.onload = function() {
+    if (screen.width < 500) {
+      let cvp = document.getElementById('custom-viewport');
+      cvp.setAttribute('content','user-scalable=no,width=500');
+    }
+  };
+</script>
 </body>
 </html>
