@@ -10,8 +10,10 @@
     "production": "npm run build:public:prod && npm run start-server",
     "build:public:dev": "webpack --config ./config/webpack/webpack.dev.js",
     "build:public:prod": "webpack --config ./config/webpack/webpack.prod.js",
-    "deploy:prepare": "npm run build:public:prod && git add . && git commit -m 'Automatic deploy to heroku'",
-    "deploy:execute": "npm run deploy:prepare && git status && git push",
+    "deploy": "npm run deploy:prepare && npm run deploy:execute",
+    "deploy:prepare": "npm run build:public:prod && git add . && git commit -m 'Automatic commit for deploing to heroku'",
+    "deploy:execute": "git status && git push",
+    "test": "npm run test:server && npm run test:public",
     "test:server": "mocha --recursive",
     "test:public": "jest --coverage"
   },

@@ -19,6 +19,8 @@ You can visit working example on Heroku: https://rox-social.herokuapp.com
 * bCrypt
 * jsonwebtoken
 * multer
+* mocha
+* chai
 2. **Front-end**:
 * React.js
 * Redux
@@ -30,6 +32,7 @@ You can visit working example on Heroku: https://rox-social.herokuapp.com
 * Webpack
 * React-transition-group
 * SCSS
+* jest
 3. Deployment, executing, uploads storage, etc. :
 * Heroku
 * AWS S3
@@ -40,6 +43,11 @@ You can visit working example on Heroku: https://rox-social.herokuapp.com
 2. `npm i`
 3. `npm start`
 
+
+## Run tests
+* **Front-end:** `npm run test:public`
+* **Back-end:** `npm run test:server`
+* **All tests:** `npm run test`
 ## Additional notes
 Any help, contributions, etc. would be helpful and will make me more happy :)
  
