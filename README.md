@@ -19,8 +19,7 @@ You can visit working example on Heroku: https://rox-social.herokuapp.com
 * bCrypt
 * jsonwebtoken
 * multer
-* mocha
-* chai
+* jest
 2. **Front-end**:
 * React.js
 * Redux
@@ -45,9 +44,9 @@ You can visit working example on Heroku: https://rox-social.herokuapp.com
 
 
 ## Run tests
-* **Front-end:** `npm run test:public`
-* **Back-end:** `npm run test:server`
-* **All tests:** `npm run test`
+`npm run test`
+
+This command will run all tests in both front-end and back-end directories with coverage and verbose output.
 ## Additional notes
 Any help, contributions, etc. would be helpful and will make me more happy :)
  
