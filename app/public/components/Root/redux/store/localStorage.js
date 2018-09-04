@@ -1,4 +1,4 @@
-import AppInitialState from './InitialState'
+import AppInitialState from './initialState'
 /**
  * @function loadPersistedState - load persisted redux state from local storage
  * @return {Object/undefined} state - redux persisted state or empty state(undefined).
