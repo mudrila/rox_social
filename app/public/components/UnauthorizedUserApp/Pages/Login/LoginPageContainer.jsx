@@ -7,5 +7,5 @@ const mapDispatchToProps = (dispatch) => {
   return {
     loginRequest: (userCredentials) => { dispatch(loginRequest(userCredentials)) }
   }
-}
+};
 export default withRouter(connect(null, mapDispatchToProps)(LoginPage))
