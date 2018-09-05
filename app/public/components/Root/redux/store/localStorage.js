@@ -25,6 +25,6 @@ export const saveStateToLocalStorage = (state) => {
     const serializedState = JSON.stringify(state);
     localStorage.setItem('appState', serializedState)
   } catch (error) {
-    // Failed to persist state - do nothing
+    throw error;
   }
 };

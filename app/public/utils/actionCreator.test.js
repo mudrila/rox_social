@@ -1,6 +1,6 @@
 import { makeActionCreator } from "./actionCreator";
 
-describe('Make Action Creator ', () => {
+describe('Make Action Creator Factory', () => {
   it('It should throw error, if call it without any parameters', (done) => {
     expect(() => {makeActionCreator()}).toThrow();
     done()

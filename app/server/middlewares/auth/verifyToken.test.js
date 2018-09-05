@@ -1,4 +1,3 @@
-const uuid = require('uuid/v4');
 const jwt = require('jsonwebtoken');
 const httpMocks = require('node-mocks-http');
 const config = require('../../../../config/index');
@@ -9,6 +8,7 @@ const baseResponse = require('../../base_response');
 const verifyToken = require('./verifyToken');
 const warningResponse = baseResponse.baseWarningResponse('No access token provided.');
 const errorResponse = baseResponse.baseErrorResponse('Failed to authenticate token');
+const mockUser = require('../../../../tests/mocks/user.mock');
 
 chai.use(chaiHttp);
 
@@ -40,12 +40,6 @@ describe('Verify Token middleware', function () {
     })
   });
   it('It should pass user to request object', function (done) {
-    const mockUser = {
-      id: uuid(),
-      uuid: uuid(),
-      name: 'Mock user',
-      creationTime: new Date().toDateString()
-    };
     const mockToken = jwt.sign({user: mockUser}, config.jwtSecret);
     const request = httpMocks.createRequest({
       headers: {
@@ -58,12 +52,6 @@ describe('Verify Token middleware', function () {
     done();
   });
   it('It should call next handler', function (done) {
-    const mockUser = {
-      id: uuid(),
-      uuid: uuid(),
-      name: 'Mock user',
-      creationTime: new Date().toDateString()
-    };
     const mockToken = jwt.sign({user: mockUser}, config.jwtSecret);
     const request = httpMocks.createRequest({
       headers: {
