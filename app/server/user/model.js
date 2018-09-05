@@ -28,10 +28,7 @@ let UserSchema = new mongoose.Schema({
   avatarSrc: {
     type: String,
     trim: true
-  },
-  friends: [ this ],
-  subscribers: [ this ],
-  subscriptions: [ this ]
+  }
 });
 let User = mongoose.model('User', UserSchema);
 module.exports = User;
