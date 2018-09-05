@@ -9,6 +9,9 @@ export const APIUrl = '/api/';
  * @returns {Promise<AxiosResponse<any>>}
  */
 export const baseGetRequest = (endPoint, params = {} ) => {
+  if (!endPoint) {
+    throw new Error('Cannot make request without end-point info')
+  }
   let appState = JSON.parse(localStorage.getItem('appState'));
   let accessToken = '';
   if (appState !== null) {
@@ -31,7 +34,10 @@ export const baseGetRequest = (endPoint, params = {} ) => {
  * @param formData - data, which need to be sent
  * @returns {Promise<AxiosResponse<any>>}
  */
-export const basePostRequest = (endPoint, formData) => {
+export const basePostRequest = (endPoint, formData = {}) => {
+  if (!endPoint) {
+    throw new Error('Cannot make request without end-point info')
+  }
   let appState = JSON.parse(localStorage.getItem('appState'));
   let accessToken = '';
   if (appState !== null) {
@@ -57,6 +63,9 @@ export const basePostRequest = (endPoint, formData) => {
  * @returns {Promise<AxiosResponse<any>>}
  */
 export const baseFileUploadRequest = (endPoint, file) => {
+  if (!endPoint) {
+    throw new Error('Cannot make request without end-point info')
+  }
   let appState = JSON.parse(localStorage.getItem('appState'));
   let accessToken = '';
   if (appState !== null) {

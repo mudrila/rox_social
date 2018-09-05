@@ -1,11 +1,11 @@
 import { makeActionCreator } from "./actionCreator";
 
 describe('Make Action Creator Factory', () => {
-  it('It should throw error, if call it without any parameters', (done) => {
+  it('Should throw error, if call it without any parameters', (done) => {
     expect(() => {makeActionCreator()}).toThrow();
     done()
   });
-  it('It should create function', (done) => {
+  it('Should create function', (done) => {
     expect(typeof makeActionCreator('TEST_ACTION_TYPE', 'testKey1', 'testKey2')).toBe('function');
     done();
   });

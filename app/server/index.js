@@ -1,4 +1,3 @@
-const config = require('../../config/index');
 const dbConfig = require('../../config/database');
 const express = require('express');
 const path = require('path');
@@ -28,19 +27,14 @@ app.use(bodyParser.urlencoded({ limit: '20mb', extended: false}));
 
 // End-points
 app.use('/api/user', userRouter);
-
+if (process.env.NODE_ENV === 'test') {
+  const testingRouter = require('./testing/routes');
+  app.use('/api/test', testingRouter);
+}
 // Serve static
 app.use(express.static(path.join(__dirname, '../../dist')));
 app.get('*', function (request, response) {
   response.sendFile(path.resolve(__dirname, '../../dist', 'index.html'))
-});
-
-// Run server
-app.listen(config.port, error => {
-  if (error) {
-    console.error('Error while running server:', error)
-  }
-  console.info(`Express listening on port ${config.port}`)
 });
 
 module.exports = app;

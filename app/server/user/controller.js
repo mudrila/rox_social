@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 const config = require('../../../config/index');
 const User = require('./model');
 const baseResponse = require('../base_response/index');
+const baseWarningResponse = baseResponse.baseWarningResponse;
 
 function signUp (request, response) {
   let requestData = request.body;
@@ -81,18 +82,10 @@ function login(request, response) {
           })
         } else {
           // Don't help to hackers - email is correct, but it can be brute force, so just tell that 'something' incorrect
-          response.json({
-            success:false,
-            messageType:'warning',
-            messageBody: 'Email or password incorrect'
-          })
+          response.json(baseWarningResponse('Email or password incorrect'))
         }
       } else {
-        response.json({
-          success:false,
-          messageType:'warning',
-          messageBody: 'Email or password incorrect'
-        })
+        response.json(baseWarningResponse('Email or password incorrect'))
       }
     });
   } else {

@@ -8,38 +8,38 @@ const baseResponse = require('../../base_response');
 const verifyToken = require('./verifyToken');
 const warningResponse = baseResponse.baseWarningResponse('No access token provided.');
 const errorResponse = baseResponse.baseErrorResponse('Failed to authenticate token');
-const mockUser = require('../../../../tests/mocks/user.mock');
+const mockUser = require('../../../../tests/__mocks__/user.mock');
 
 chai.use(chaiHttp);
 
 describe('Verify Token middleware', function () {
-  it('It should return 403 HTTP code, if here is no token', function (done) {
+  it('Should return 403 HTTP code, if here is no token', function (done) {
     chai.request(app).get('/api/user/search').end(function(error, response) {
       expect(response.status).toEqual(403);
       done();
     });
   });
-  it('It should have default json in body, if here is no token', function (done) {
+  it('Should have default json in body, if here is no token', function (done) {
     chai.request(app).get('/api/user/search').end(function (error, response) {
       expect(response.body).toEqual(warningResponse)
     });
     done();
   });
-  it('It should return 500 HTTP code, if cannot parse token', function (done) {
+  it('Should return 500 HTTP code, if cannot parse token', function (done) {
     chai.request(app).get('/api/user/search').set('Authorization', ' __some_broken_token___')
     .end(function (error, response) {
       expect(response.status).toEqual(500);
       done();
     })
   });
-  it('It should contain default json in body, if cannot parse token', function(done) {
+  it('Should contain default json in body, if cannot parse token', function(done) {
     chai.request(app).get('/api/user/search').set('Authorization', '__some_broken_token___')
     .end(function (error, response) {
       expect(response.body).toEqual(errorResponse);
       done();
     })
   });
-  it('It should pass user to request object', function (done) {
+  it('Should pass user to request object', function (done) {
     const mockToken = jwt.sign({user: mockUser}, config.jwtSecret);
     const request = httpMocks.createRequest({
       headers: {
@@ -51,7 +51,7 @@ describe('Verify Token middleware', function () {
     expect(request.user).toEqual(mockUser);
     done();
   });
-  it('It should call next handler', function (done) {
+  it('Should call next handler', function (done) {
     const mockToken = jwt.sign({user: mockUser}, config.jwtSecret);
     const request = httpMocks.createRequest({
       headers: {

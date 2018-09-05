@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run development",
-    "start-server": "node $NODE_DEBUG_OPTION app/server/index.js",
+    "start-server": "node $NODE_DEBUG_OPTION ./index.js",
     "development": "npm run build:public:dev && npm run start-server",
     "production": "npm run build:public:prod && npm run start-server",
     "build:public:dev": "webpack --config ./config/webpack/webpack.dev.js",
