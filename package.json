@@ -13,7 +13,8 @@
     "deploy": "npm run deploy:prepare && npm run deploy:execute",
     "deploy:prepare": "npm run build:public:prod && git add . && git commit -m 'Automatic commit for deploing to heroku'",
     "deploy:execute": "git status && git push",
-    "test": "jest --coverage --verbose=true"
+    "test": "jest --coverage --verbose=true",
+    "test:sudo": "sudo npm run test"
   },
   "repository": {
     "type": "git",

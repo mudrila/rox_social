@@ -2,6 +2,7 @@ import { baseGetRequest, basePostRequest, baseFileUploadRequest} from "../../../
 const baseResponse = require('../../../app/shared/baseResponse/index');
 const baseSuccessResponse = baseResponse.baseSuccessResponse;
 const app = require('../../../app/server/index');
+
 describe('API Requests Bases', () => {
   let server;
   beforeAll((done) => {

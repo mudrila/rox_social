@@ -44,7 +44,12 @@ You can visit working example on Heroku: https://rox-social.herokuapp.com
 
 
 ## Run tests
-`npm run test`
+`sudo npm run test` or `npm run test:sudo`
+
+Second command just will execute first variant.
+
+Your need to run tests with `sudo`, because in test environment it will bind server to 80 port. 
+And that requires root privilege.
 
 This command will run all tests in both front-end and back-end directories with coverage and verbose output.
 ## Additional notes
