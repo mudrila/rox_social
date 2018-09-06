@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { APIUrl, baseGetRequest } from "../../../Root/redux/middlewares/APIServiceBases"
+import { APIUrl, baseGetRequest } from "../../../../../shared/baseRequest/index"
 import { withRouter } from 'react-router-dom'
 import { subscribeRequest } from "../Friends/redux/actions"
 import { store } from '../../../../index'

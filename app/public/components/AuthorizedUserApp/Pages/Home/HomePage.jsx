@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import { APIUrl } from '../../../Root/redux/middlewares/APIServiceBases'
+import { APIUrl } from '../../../../../shared/baseRequest/index'
 import classNames from 'classnames'
 import { withStyles } from '@material-ui/core'
 import Card from '@material-ui/core/Card'

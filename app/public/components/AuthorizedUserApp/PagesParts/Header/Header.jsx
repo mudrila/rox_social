@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import {APIUrl} from "../../../Root/redux/middlewares/APIServiceBases"
+import {APIUrl} from "../../../../../shared/baseRequest/index"
 import { NavLink, withRouter } from 'react-router-dom'
 import classNames from 'classnames'
 import { withStyles } from '@material-ui/core/styles'
@@ -15,7 +15,7 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import Divider from "@material-ui/core/Divider"
-import { 
+import {
           faBars, faSignOutAlt, faUser, faUserCog, faUserFriends, faComments,
           faChevronLeft
 } from '@fortawesome/free-solid-svg-icons'

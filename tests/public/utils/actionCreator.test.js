@@ -1,4 +1,4 @@
-import { makeActionCreator } from "./actionCreator";
+import { makeActionCreator } from "../../../app/public/utils/actionCreator";
 
 describe('Make Action Creator Factory', () => {
   it('Should throw error, if call it without any parameters', (done) => {

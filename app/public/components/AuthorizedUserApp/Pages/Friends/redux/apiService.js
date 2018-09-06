@@ -1,4 +1,4 @@
-import {baseGetRequest, basePostRequest} from "../../../../Root/redux/middlewares/APIServiceBases";
+import {baseGetRequest, basePostRequest} from "../../../../../../shared/baseRequest/index";
 
 export const search = function (searchName) {
   return baseGetRequest('user/search', { name: searchName })

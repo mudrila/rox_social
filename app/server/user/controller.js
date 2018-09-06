@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const config = require('../../../config/index');
 const User = require('./model');
-const baseResponse = require('../base_response/index');
+const baseResponse = require('../../shared/baseResponse/index');
 const baseWarningResponse = baseResponse.baseWarningResponse;
 
 function signUp (request, response) {

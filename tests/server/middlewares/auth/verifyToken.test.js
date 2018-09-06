@@ -3,12 +3,12 @@ const httpMocks = require('node-mocks-http');
 const config = require('../../../../config/index');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
-const app = require('../../index');
-const baseResponse = require('../../base_response');
-const verifyToken = require('./verifyToken');
+const app = require('../../../../app/server/index');
+const baseResponse = require('../../../../app/shared/baseResponse/index');
+const verifyToken = require('../../../../app/server/middlewares/auth/verifyToken');
 const warningResponse = baseResponse.baseWarningResponse('No access token provided.');
 const errorResponse = baseResponse.baseErrorResponse('Failed to authenticate token');
-const mockUser = require('../../../../tests/__mocks__/user.mock');
+const mockUser = require('../../../__mocks__/user.mock');
 
 chai.use(chaiHttp);
 

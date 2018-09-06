@@ -1,7 +1,7 @@
-import { saveStateToLocalStorage, loadPersistedState} from "../localStorage";
-import { localStorageMock } from "../../../../../../../tests/__mocks__/localStorage.mock";
-import mockUser from '../../../../../../../tests/__mocks__/user.mock'
-import AppInitialState from '../initialState'
+import { saveStateToLocalStorage, loadPersistedState} from "../../../../../../app/public/components/Root/redux/store/localStorage";
+import { localStorageMock } from "../../../../../__mocks__/localStorage.mock";
+import mockUser from '../../../../../__mocks__/user.mock'
+import AppInitialState from '../../../../../../app/public/components/Root/redux/store/initialState'
 describe('Persisting redux store state to local storage', () => {
   describe('Save state', () => {
     let mockStoreState;

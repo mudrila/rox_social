@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { APIUrl } from '../../../Root/redux/middlewares/APIServiceBases'
+import { APIUrl } from '../../../../../shared/baseRequest/index'
 import {NavLink} from 'react-router-dom'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'

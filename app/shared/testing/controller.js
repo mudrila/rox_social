@@ -1,4 +1,4 @@
-const baseResponse = require('../base_response');
+const baseResponse = require('../baseResponse/index');
 const baseSuccessResponse = baseResponse.baseSuccessResponse;
 
 function get(request, response) {

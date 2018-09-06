@@ -1,4 +1,4 @@
-import { basePostRequest, baseFileUploadRequest } from '../../../../Root/redux/middlewares/APIServiceBases'
+import { basePostRequest, baseFileUploadRequest } from '../../../../../../shared/baseRequest/index'
 
 export const loginRequest = function (userCredentials) {
   return basePostRequest('user/login', {

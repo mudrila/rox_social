@@ -1,4 +1,4 @@
-import { basePostRequest } from '../../../../Root/redux/middlewares/APIServiceBases'
+import { basePostRequest } from '../../../../../../shared/baseRequest/index'
 
 export const registerUserRequest = function (user) {
   return basePostRequest('user/registration', {

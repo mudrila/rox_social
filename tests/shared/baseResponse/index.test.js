@@ -1,4 +1,4 @@
-const baseResponses = require('./index');
+const baseResponses = require('../../../app/shared/baseResponse/index');
 const baseError = baseResponses.baseErrorResponse;
 const baseWarning = baseResponses.baseWarningResponse;
 const baseSuccess = baseResponses.baseSuccessResponse;

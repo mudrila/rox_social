@@ -66,6 +66,9 @@ export const baseFileUploadRequest = (endPoint, file) => {
   if (!endPoint) {
     throw new Error('Cannot make request without end-point info')
   }
+  if (!file) {
+    throw new Error('Cannot process request without file')
+  }
   let appState = JSON.parse(localStorage.getItem('appState'));
   let accessToken = '';
   if (appState !== null) {

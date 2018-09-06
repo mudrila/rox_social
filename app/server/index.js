@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({ limit: '20mb', extended: false}));
 // End-points
 app.use('/api/user', userRouter);
 if (process.env.NODE_ENV === 'test') {
-  const testingRouter = require('./testing/routes');
+  const testingRouter = require('../shared/testing/routes');
   app.use('/api/test', testingRouter);
 }
 // Serve static

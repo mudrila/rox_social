@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const config = require('../../../../config/index');
-const baseResponse = require('../../base_response');
+const baseResponse = require('../../../shared/baseResponse');
 const baseWarningResponse = baseResponse.baseWarningResponse;
 const baseErrorResponse = baseResponse.baseErrorResponse;
 
