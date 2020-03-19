@@ -1,5 +1,5 @@
 ## Project description
-This is example of Social Network.
+This is example of awesome Social Network.
 
 This project use Node.js as back-end for next things:
 * Serving front-end (Server-side rendering)
